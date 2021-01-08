@@ -1,0 +1,18 @@
+.main-flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex-table{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+.main-section-container{
+    width: 50%;
+}
+.background-img{
+    margin: auto;
+}
