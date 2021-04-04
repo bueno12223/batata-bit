@@ -6,3 +6,7 @@
     border: 21px solid var(--just-white);
     display: flex;
 }
+.header{
+    height: 50px;
+    width: 100%;
+}

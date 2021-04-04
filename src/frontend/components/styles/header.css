@@ -1,6 +1,21 @@
+/* header text */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_text{
+    margin-left: 10px;
 
-.header_title{
-    font-weight: 600;
-    font-size: 43px;
-    
+}
+.header_textTitle{
+    font-weight: 800;
+    font-size: 2.5em;
+}
+/* header user icons an the other idk */
+.header_user{
+    display: flex;
+    align-items: center;
+
+
 }
