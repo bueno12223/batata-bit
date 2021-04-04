@@ -19,3 +19,30 @@
 
 
 }
+/* user data info ... */
+.header_userMail{
+    margin-right: 10px;
+}
+.header_userMail:hover > path {
+    fill: #197BBD;
+    cursor: pointer;
+}
+.header_userNotification:hover > path {
+    fill: #197BBD;
+    cursor: pointer;
+}
+.header_userAvatar{
+    width: 50px;
+    
+}
+.header_TextOptions{
+    cursor: pointer;
+    color: #AEAEAE;
+}
+.header_TextOptions:hover{
+    color: #197BBD;
+}
+.header_TextName{
+    font-size: 1.2em;
+    font-weight: 800;
+}
