@@ -21,13 +21,19 @@
     height: 39px;
     width: 160px;
     border-radius: 4px;
+    margin-bottom: 5px;
 }
 .menu_button:hover{
     background-color: #F0F7FF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
 }
 /* selectors en button */
 .menu_button:hover > .menu_option  > p{
     color: #197BBD;
+}
+.menu_button:hover .menu_svg > path{
+    stroke:#197BBD;
 }
 /* option is a inner div whit the elements */
 .menu_option{
@@ -52,8 +58,29 @@
 
 /* move it is a class designe to align items manually whit padding */
 .moveIt{
-    padding-left: 5px;
+    padding-left: 10px;
 }
-.menu_button:hover .svg > path{
-    stroke:#197BBD;
+/* update your plan!! the section ._. */
+.navbar_upgrade{
+    margin-top: 20px;
 }
+.navbar_upgradeImg{
+    margin-left: 13%;
+}
+.navbar_upgradeButton{
+    background-color: var(--bitcoin-orange);
+    width: 163.21px;
+    height: 41.03px;
+    border-radius: 13.617px;
+    margin-top: 10px;
+    font-weight: 1000;
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
+}
+.navbar_upgradeButton > svg {
+    margin-left: 5px;
+}
+.navbar_upgradeButton:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+    

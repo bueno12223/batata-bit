@@ -2,7 +2,7 @@
     background-color: var(--just-white);
     margin: 20px;
     border-radius: 30px;
-    height: 90vh;
+    height: 90%;
     border: 21px solid var(--just-white);
     display: flex;
 }

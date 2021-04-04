@@ -29,7 +29,7 @@ body{
 button{
     border: none;
     text-decoration: none;
-    background-color: none;
     border-radius:10px;
     background-color: white;
+    outline:none;
 }
