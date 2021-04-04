@@ -1,3 +1,8 @@
-.class{
-    background-color: aqua;
+.border{
+    background-color: var(--just-white);
+    margin: 20px;
+    border-radius: 30px;
+    height: 90vh;
+    border: 21px solid var(--just-white);
+    display: flex;
 }
