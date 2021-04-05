@@ -1,66 +1,123 @@
-.cards{
-    display: flex;
-}
-.cardsL{
-    width: 50%;
-    margin: 10px;
-    margin-bottom: 0px;
-}
-.cardsR{
-    width: 50%;
-    height: 100%;
-    display: grid;
-    gap: 5px;
-    grid-template-rows: 25px 170px 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-
-}
+/* card is a class designe to give styles to all the cards */
 .card{
     border-radius: 20px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 28px;
 }
-.card_overview{
-    height: 50%;
+/* cards is the main container  */
+.cards_container{
+    display: flex;
+    flex-direction: column;
+}
+/* cards have 2 sons , right and left side */
+.cards_leftContainer{
     width: 100%;
+    margin: 10px;
+    margin-bottom: 0px;
+    height: 90vh;
+    margin-bottom: 20px;
+}
+.cards_RigthContainer{
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 5px;
+    grid-template-rows: 25px 170px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 10px;
+
+}
+/* left card */
+.card_LeftOverview{
+    height: 50%;
+    max-width: 450px;
+    margin: 0 auto;
     margin-bottom: 1%;
 }
+.card_LeftHistory{
+    background-color: white;
+    height: 50%;
+    max-width: 450px;
+    margin: 0 auto;
 
-.card_goal{
+}
+/* right cards  */
+.card_RightGoal{
     background-color: white;
     grid-column: 3 span;
 }
-.card_goalTitle{
+.card_RightGoalTitle{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     grid-column: 1 span;
 }
-.card_goalTitle > p{
+.card_RightGoalTitle > p{
     margin: 0 10px;
 }
-.span{
-    grid-column: 2 span;
-}
-.card_goalTap{
+
+.card_RightGoalTap{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     grid-column: 1 span;
-    width: 85%;
+    width: 99%;
     justify-content: center;
     justify-self: center;
+    max-width: 200px;
 }
-.card_history{
-    background-color: white;
-    height: 50%;
-    width: 100%;
+/* tap is each div in goal */
+.tap1 {
+    grid-column: 3 span;
+}
+.tap2 {
+    display: none;
+}
+.tap3 {
+    display: none;
 
 }
-.card_statics{
+
+.card_RigthStatics{
     height: 200px;
     width: 100%;
     grid-column: 3 span;
 }
-.card_newTransactions{
+.card_RigthTransactions{
     grid-column: 2 span;
+}
+/* media query Mobile first */
+@media(min-width: 425px){
+    .tap1{
+        grid-column: 1 span;
+    }
+    .tap2 {
+        display: inline;
+    }
+    .tap3 {
+        display: inline;
+    }
+}
+@media(min-width: 570px){
+    .cards_container{
+        display: flex;
+    }
+}
+@media(min-width: 900px){
+    .cards_container{
+        flex-direction: row;
+    }
+    .cards_RigthContainer{
+        margin-left: 0px;
+    }
+    .cards_leftContainer{
+        height: auto;
+    }
+    .card_LeftOverview{
+        margin-bottom: 6%;
+    }
+}
+@media(min-width: 1000px){
+.card_RightGoalTap{
+    width: 90%;
+    }
 }
 

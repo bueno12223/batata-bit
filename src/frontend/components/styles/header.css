@@ -1,12 +1,10 @@
 /* header text */
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 .header_text{
     margin-left: 10px;
 
+}
+.header_Text{
+    display: none;
 }
 .header_textTitle{
     font-weight: 800;
@@ -45,4 +43,19 @@
 .header_TextName{
     font-size: 1.2em;
     font-weight: 800;
+}
+
+@media (min-width: 430px){
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+
+}
+@media(min-width: 500px){
+    .header_Text{
+        display: inline;
+    }
 }
