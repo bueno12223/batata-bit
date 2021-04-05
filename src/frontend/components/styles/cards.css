@@ -1,0 +1,66 @@
+.cards{
+    display: flex;
+}
+.cardsL{
+    width: 50%;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+.cardsR{
+    width: 50%;
+    height: 100%;
+    display: grid;
+    gap: 5px;
+    grid-template-rows: 25px 170px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.card{
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 28px;
+}
+.card_overview{
+    height: 50%;
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+.card_goal{
+    background-color: white;
+    grid-column: 3 span;
+}
+.card_goalTitle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    grid-column: 1 span;
+}
+.card_goalTitle > p{
+    margin: 0 10px;
+}
+.span{
+    grid-column: 2 span;
+}
+.card_goalTap{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    grid-column: 1 span;
+    width: 85%;
+    justify-content: center;
+    justify-self: center;
+}
+.card_history{
+    background-color: white;
+    height: 50%;
+    width: 100%;
+
+}
+.card_statics{
+    height: 200px;
+    width: 100%;
+    grid-column: 3 span;
+}
+.card_newTransactions{
+    grid-column: 2 span;
+}
+
