@@ -1,14 +1,14 @@
 import React from 'react';
 
 import CardVisa from './cardVisa.jsx';
-
+import CardHistory from './cardHistory.jsx';
 import './styles/cards.css';
 
 const Cards = () => (
     <div className='cards_container'>
         <div className="cards_leftContainer">
             <div className="card card_LeftOverview"><CardVisa></CardVisa></div>
-            <div className="card card_LeftHistory"></div>
+            <div className="card card_LeftHistory"><CardHistory></CardHistory></div>
             </div>
         <div className="cards_RigthContainer">
             <div className="card_RightGoal">
