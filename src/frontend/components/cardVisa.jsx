@@ -18,12 +18,21 @@ const CardVisa = () =>{
                     
                 </div>
                 <div className="overview_balance">
-                    <h2 className='overview_balanceMain'>2850$</h2>
-                    <p className='overview_balancedescrip'>Balance actual</p>
-                    <h3 className='overview_balanceIncomer'>300$</h3>
-                    <p className='overview_balancedescirp'>Ingresos</p>
-                    <h4 className='overview_balanceSpend'>-150$</h4>
-                    <p className='overview_balancedescrip'>Gastos</p>
+                    <div className="">
+                        <h2 className='overview_balanceMain'>2850$</h2>
+                        <p className='overview_balancedescrip'>Balance actual</p>
+                    </div>
+                    <div className="">
+                        <h3 className='overview_balanceIncomer'>300$</h3>
+                        <p className='overview_balancedescrip'>Ingresos</p>
+                    </div>
+                    <div className="">
+                        <h4 className='overview_balanceSpend'>-150$</h4>
+                        <p className='overview_balancedescrip'>Gastos</p>
+                    </div>
+                   
+                    
+                   
                 </div>
                 <div className="overview_progesiveBar">
                     <div className="overview_progresiveFill" style={{width: 200 }} ></div>

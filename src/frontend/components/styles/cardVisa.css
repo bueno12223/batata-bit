@@ -19,6 +19,7 @@
     background-position: center ;
     height: 172px;
     width: 279px;
+    margin: auto;
 
 }
 .overview_visaName{
@@ -55,22 +56,27 @@
     margin-left: 10%;
     display: flex;
     align-items: flex-end;
-    flex-direction: column;
+    flex-direction: row;
+    margin: auto;
 }
 .overview_balancedescrip{
     color: #AEAEAE;
+    text-align: end;
+    margin-right: 5px;
 }
 .overview_balanceMain{
     color: #197BBD;
     font-size: 3em;
     font-weight: 600;
     font-family: 'Lato', sans-serif;
+    margin-right: 5px;
 }
 .overview_balanceIncomer, .overview_balanceSpend{
     color: #197BBD;
     font-size: 1.6em;
     font-weight: 600;
     font-family: 'Lato', sans-serif;
+    margin-right: 5px;
 
 }
 .overview_balanceIncomer{
@@ -94,6 +100,21 @@
     border-radius: 20px;
 }
 /* media querys */
+@media(min-width: 540px){
+    .overview_balance{
+        flex-direction: column; 
+    }
+    .overview_balance{
+        margin: 0;
+        margin-left: 10%;
+    }
+    .overview_balanceIncomer, 
+    .overview_balanceSpend, 
+    .overview_balanceMain, 
+    .overview_balancedescrip{
+        margin-right: 0px;
+    }
+}
 @media( min-width: 900px){
     .overview_balance{
         flex-direction: row;
@@ -106,10 +127,8 @@
     .overview_balance{
         flex-direction: column;
     }
-
-}
-@media(max-width: 540px){
-    .overview_balance{
-        flex-direction: row;
+    .overview_visa{
+        margin: none;
     }
+
 }
