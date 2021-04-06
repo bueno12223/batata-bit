@@ -23,11 +23,7 @@ const cardGoal = () => {
                 </svg>
             </div>
             <div className="goalItem">
-            <GoalItem key={goal[0].id} {...goal[0]}></GoalItem>
-            <GoalItem key={goal[0].id} {...goal[0]}></GoalItem>
-            <GoalItem key={goal[0].id} {...goal[0]}></GoalItem>
-            <GoalItem key={goal[0].id} {...goal[0]}></GoalItem>
-            
+                {goal.map( e => <GoalItem key={e.id} {...e}></GoalItem> )}
             </div>
             
             {/* {goal.map( e => (

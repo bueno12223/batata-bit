@@ -10,7 +10,10 @@
 .goalItem{
     width: 1/3vh;
     display: flex;
-    overflow-x: hidden;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity ;
+    scroll-snap-align: center;
+    position: relative;
+    overflow: overlay;
+    height: 100%;
 }

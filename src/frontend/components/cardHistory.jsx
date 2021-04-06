@@ -12,7 +12,8 @@ const CardHistory = () => {
        { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 2, img: null },
        {to: 'María', date: '12 de Dic', type:'ocio', ammount: '200$', id: 3, img: null  },
        { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 4, img: null },
-       {to: 'María', date: '12 de Dic', type:'transacción', ammount: '200$', id: 5, img: null  }
+       {to: 'María', date: '12 de Dic', type:'transacción', ammount: '200$', id: 5, img: null  },
+       
     ]
     const handleImg = (type, id) => {
         switch (type) {
