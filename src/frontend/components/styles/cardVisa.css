@@ -1,0 +1,115 @@
+/* title of the card */
+.overview_title{
+    font-weight: 600;
+    font-size: 1.5em;
+    width: 100%;
+}
+/* div #1 div·visa image */
+.overview_visaContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.overview_visa{
+    background-image: url('../../images/icons/menu.svg');
+    color: white;
+    width: 80%;
+    height: 65%;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: center ;
+    height: 172px;
+    width: 279px;
+
+}
+.overview_visaName{
+    padding-top: 20px;
+    padding-left: 15px;
+    font-size: 1.4em;
+    font-weight: 700;
+
+}
+.overview_visaType{
+    font-size: 1em;
+    padding-left: 15px;
+
+}
+.overview_visaNumbers{
+    padding: 0 auto;
+    font-size: 2em;
+    margin-top: 20px;
+    margin-left: 38px;
+    width: 196px;
+    margin: 10px auto;
+
+}
+.overview_visaUser{
+
+    padding-top: 20px;
+}
+.overview_visaDate{
+    padding-left: 15px;
+    padding-top: 20px;
+}
+/* div #2 account balance */
+.overview_balance{
+    margin-left: 10%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.overview_balancedescrip{
+    color: #AEAEAE;
+}
+.overview_balanceMain{
+    color: #197BBD;
+    font-size: 3em;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+}
+.overview_balanceIncomer, .overview_balanceSpend{
+    color: #197BBD;
+    font-size: 1.6em;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+
+}
+.overview_balanceIncomer{
+    color: #439A86;
+}
+.overview_balanceSpend{
+    color: #BB4430;
+}
+
+/* div # 3 progresive bar */
+.overview_progesiveBar{
+    height: 10px;
+    width: 90%;
+    background-color: var(--grey);
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.overview_progresiveFill{
+    height: 10px;
+    background-color: #197BBD;
+    border-radius: 20px;
+}
+/* media querys */
+@media( min-width: 900px){
+    .overview_balance{
+        flex-direction: row;
+    }
+    .overview_balanceIncomer, .overview_balanceSpend{
+        margin-left: 5px;
+    }
+}
+@media( min-width: 1180px){
+    .overview_balance{
+        flex-direction: column;
+    }
+
+}
+@media(max-width: 540px){
+    .overview_balance{
+        flex-direction: row;
+    }
+}

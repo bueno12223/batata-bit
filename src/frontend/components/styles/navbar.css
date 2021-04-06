@@ -3,6 +3,9 @@
     box-shadow: 1px 0px 0px 0px #d6d6d6;
     display: none;
 }
+.navrbar_menuSideBar{
+    margin-top: 100px;
+}
 /* is the section whit the logo in the navBar */
 .logo{
     display: flex;
@@ -12,10 +15,6 @@
     padding-left: 1%;
     font-size: 1.7em;
 
-}
-/* menu  */
-.menu{
-    margin-top: 50px;
 }
 /* buttons of the menu */
 .menu_button{

@@ -11,8 +11,10 @@ return(
         <img src={Batata} alt=""/>
             <h3 className="logo_text">BatataBit</h3> 
         </div>
-        <div className="menu">
-            <button className='menu_button' >
+        <div className="navrbar_menuSideBar">
+            <ul>
+                <a href="">
+                <button className='menu_button' >
                 <div className="menu_option moveIt">
                 <svg className='menu_svg' width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.14853 17.7924L0.148529 0.708664" stroke="#C7C7C7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -22,7 +24,9 @@ return(
                     <p>Overview</p>
                 </div>
             </button>
-            <button className='menu_button'>
+                </a>
+                <a href="">
+                <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg' width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="29.1405" height="29.427" transform="translate(0.690384 0.250763)"/>
@@ -36,7 +40,9 @@ return(
                     <p>Transactions</p>
                 </div>
             </button>
-            <button className='menu_button'>
+                </a>
+                <a href="">
+                <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg' width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" transform="translate(0.690384 0.250763)"/>
@@ -46,7 +52,9 @@ return(
                     <p>Cash</p>
                 </div>
             </button>
-            <button className='menu_button'>
+                </a>
+                <a href="">
+                <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg' width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" transform="translate(0.690384 0.25061)"/>
@@ -56,7 +64,9 @@ return(
                     <p>Invocie</p>
                 </div>
             </button>
-            <button className='menu_button'>
+                </a>
+                <a href="">
+                <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg'  width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" transform="translate(0.690384 0.250763)"/>
@@ -66,7 +76,9 @@ return(
                     <p>Goals</p>
                 </div>
             </button>
-            <button className='menu_button'>
+                </a>
+                <a href="">
+                <button className='menu_button'>
                 <div className="menu_option">
                     <svg className='menu_svg'  width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="30" height="30" transform="translate(0.690384 0.250763)" />
@@ -76,8 +88,10 @@ return(
                     <p>Settings</p>
                 </div>
             </button>
-
+                </a>
+            </ul>
         </div>
+
        <div className="navbar_upgrade">
             <img className='navbar_upgradeImg' src={UpDatePlan} alt=""/>
             <button className="navbar_upgradeButton">Upgrade to premium 

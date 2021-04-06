@@ -29,10 +29,13 @@
 }
 /* left card */
 .card_LeftOverview{
-    height: 50%;
+    height: auto;
     max-width: 450px;
     margin: 0 auto;
     margin-bottom: 1%;
+    border: 21px solid white;
+    display: flex;
+    flex-wrap: wrap;
 }
 .card_LeftHistory{
     background-color: white;
@@ -104,6 +107,12 @@
 @media(min-width: 900px){
     .cards_container{
         flex-direction: row;
+    }
+    .overview_visa{
+        min-height: none; 
+        max-width: none;
+        width: 200px;
+        
     }
     .cards_RigthContainer{
         margin-left: 0px;

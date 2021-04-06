@@ -1,10 +1,13 @@
 import React from 'react';
+
+import CardVisa from './cardVisa.jsx';
+
 import './styles/cards.css';
 
 const Cards = () => (
     <div className='cards_container'>
         <div className="cards_leftContainer">
-            <div className="card card_LeftOverview"></div>
+            <div className="card card_LeftOverview"><CardVisa></CardVisa></div>
             <div className="card card_LeftHistory"></div>
             </div>
         <div className="cards_RigthContainer">
@@ -18,7 +21,8 @@ const Cards = () => (
                 </svg>
             </div>
             </div>
-            <div className="card card_RightGoalTap tap1"></div>
+            <div className="card card_RightGoalTap tap1">
+            </div>
             <div className="card card_RightGoalTap tap2"></div>
             <div className="card card_RightGoalTap tap3"></div>
 
