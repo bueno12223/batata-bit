@@ -26,7 +26,8 @@ app.get('/', (req, res) => {
     <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
       <link rel="stylesheet" href="assets/app.css" type="text/css"/> 
-      <title>Platzi Video</title>
+      <link rel="shortcut icon" href="assets/37e6d1841a4c00037e98fd63f86865e1.svg" />
+      <title>batataBit</title>
     </head>
     <body>
       <div id="app"></div>

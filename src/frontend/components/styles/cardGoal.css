@@ -1,0 +1,16 @@
+.card_RightGoalTitle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    grid-column: 1 span;
+}
+.card_RightGoalTitle > p{
+    margin: 0 10px;
+}
+.goalItem{
+    width: 1/3vh;
+    display: flex;
+    overflow-x: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity ;
+}

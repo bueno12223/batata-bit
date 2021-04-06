@@ -1,0 +1,20 @@
+.goal_ammount{
+    padding-left: 10px;
+    padding-top: 14px;
+}
+.goal_date{
+    padding-left: 10px;
+    color: #AEAEAE;
+}
+.goal_svg{
+    margin-left: 10px;
+    margin-top: 10%;
+}
+.goal_title{
+    margin-left: 10px;
+}
+.goal_container{
+   min-width: 105px;
+   margin-left: 5px;
+   height: 100%;
+}

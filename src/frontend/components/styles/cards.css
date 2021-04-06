@@ -19,10 +19,11 @@
 }
 .cards_RigthContainer{
     width: 100%;
+    margin-top: 31px;
     height: auto;
     display: grid;
     gap: 5px;
-    grid-template-rows: 25px 170px 1fr 1fr;
+    grid-template-rows: 170px 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: 10px;
 
@@ -49,15 +50,7 @@
     background-color: white;
     grid-column: 3 span;
 }
-.card_RightGoalTitle{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    grid-column: 1 span;
-}
-.card_RightGoalTitle > p{
-    margin: 0 10px;
-}
+
 
 .card_RightGoalTap{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -65,19 +58,10 @@
     width: 99%;
     justify-content: center;
     justify-self: center;
-    max-width: 200px;
+    height: 79%;
 }
 /* tap is each div in goal */
-.tap1 {
-    grid-column: 3 span;
-}
-.tap2 {
-    display: none;
-}
-.tap3 {
-    display: none;
 
-}
 
 .card_RigthStatics{
     height: 200px;
@@ -116,6 +100,7 @@
     }
     .cards_RigthContainer{
         margin-left: 0px;
+        margin-top: 0;
     }
     .cards_leftContainer{
         height: auto;
