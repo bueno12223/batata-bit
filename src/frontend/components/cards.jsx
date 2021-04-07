@@ -4,6 +4,7 @@ import CardVisa from './cardVisa.jsx';
 import CardHistory from './cardHistory.jsx';
 
 import CardGoal from './cardGoal.jsx';
+import CardStatics from './cardStatics.jsx';
 
 import './styles/cards.css';
 
@@ -16,7 +17,7 @@ const Cards = () => {
             </div>
         <div className="cards_RigthContainer">
             <div className="card_RightGoal"><CardGoal></CardGoal></div>
-            <div className="card card_RigthStatics"></div>
+            <div className="card card_RigthStatics"><CardStatics></CardStatics></div>
             <div className="card card_RigthTransactions"></div>
             <div className="card card_RigthGreate"></div>
 

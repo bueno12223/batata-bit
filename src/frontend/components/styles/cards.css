@@ -1,7 +1,7 @@
 /* card is a class designe to give styles to all the cards */
 .card{
     border-radius: 20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
     border-radius: 28px;
 }
 /* cards is the main container  */
@@ -19,8 +19,8 @@
     width: 100%;
     height: auto;
     display: grid;
-    gap: 5px;
-    grid-template-rows: 170px 1fr 1fr;
+    gap: 7px;
+    grid-template-rows: 190px 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
     max-width: 450px;
@@ -34,6 +34,7 @@
     border: 21px solid white;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 3%;
 }
 .card_LeftHistory{
     background-color: white;
@@ -101,7 +102,7 @@
     }
     .cards_RigthContainer{
         margin-left: 0px;
-        margin-top: 0;
+        margin-top: 34px;
     }
     .cards_leftContainer{
         height: 90vh;
