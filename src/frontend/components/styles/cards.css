@@ -14,7 +14,6 @@
     width: 100%;
     margin: 10px;
     margin-bottom: 0px;
-    margin-bottom: 20px;
 }
 .cards_RigthContainer{
     width: 100%;
@@ -24,27 +23,30 @@
     grid-template-rows: 170px 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
-    margin-top: 31px;
     max-width: 450px;
 
 }
 /* left card */
 .card_LeftOverview{
-    height: auto;
+    height: 50vh;
     max-width: 450px;
     margin: 0 auto;
-    margin-bottom: 1%;
     border: 21px solid white;
     display: flex;
     flex-wrap: wrap;
 }
 .card_LeftHistory{
     background-color: white;
-    height: 50%;
+    height: 50vh;
     max-width: 450px;
     margin: 0 auto;
-
+    margin-bottom: 20px;
+    overflow: auto;
+    height: 25rem;
 }
+.card_LeftHistory::-webkit-scrollbar{
+    display: none;
+ }
 /* right cards  */
 .card_RightGoal{
     background-color: white;
@@ -103,9 +105,13 @@
     }
     .cards_leftContainer{
         height: 90vh;
+        margin-right: 0px;
     }
     .card_LeftOverview{
         margin-bottom: 6%;
+    }
+    .card_LeftHistory{
+        height: 39%;
     }
 }
 @media(min-width: 1000px){

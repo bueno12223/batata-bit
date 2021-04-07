@@ -4,10 +4,16 @@
     margin: 10px auto;
     overflow: auto;
 }
+.history_tableTitleUp{
+    margin-left: 30px;
+}
 
 .histoty_tableValueContainer{
     box-shadow: 0px 1px 1px 0px #ECECEC;
     border-radius: 20px;
+}
+.histoty_tableValueContainer > * {
+    padding-bottom: 3%;
 }
 .histoty_tableValue{
     color: #AEAEAE;
@@ -27,11 +33,22 @@
 }
 .first{
     color: black;
+    min-width: 55px;
+
 }
 .last{
     text-align: end;
     padding-right: 10px;
     font-weight: bold;
     color: black;
+}
+.out{
+    display: none;
+}
+/* media query */
+@media(min-width: 430px){
+    .out{
+        display: inline;
+    }
 }
 

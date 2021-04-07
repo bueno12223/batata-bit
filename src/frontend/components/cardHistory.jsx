@@ -13,6 +13,10 @@ const CardHistory = () => {
        {to: 'María', date: '12 de Dic', type:'ocio', ammount: '200$', id: 3, img: null  },
        { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 4, img: null },
        {to: 'María', date: '12 de Dic', type:'transacción', ammount: '200$', id: 5, img: null  },
+       { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 2, img: null },
+       {to: 'María', date: '12 de Dic', type:'ocio', ammount: '200$', id: 3, img: null  },
+       { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 4, img: null },
+       {to: 'María', date: '12 de Dic', type:'transacción', ammount: '200$', id: 5, img: null  },
        
     ]
     const handleImg = (type, id) => {
@@ -39,11 +43,11 @@ const CardHistory = () => {
     }
     return(
     <React.Fragment>
-        <h3>Historial de Transacciones</h3>
+        <h3 className='history_tableTitleUp'>Historial de Transacciones</h3>
         <table className='history_table'>
             <tr className='history_tableHead'>
                 <th className="history_tableHeadName">Para</th>
-                <th className="history_tableHeadName">fecha</th>
+                <th className="history_tableHeadName out">fecha</th>
                 <th className="history_tableHeadName">Tipo</th>
                 <th className="history_tableHeadName last">Cantidad</th>
             </tr>
@@ -51,7 +55,7 @@ const CardHistory = () => {
                 <td className='histoty_tableValue first'>
                 <img src={e.img} alt="" className="histoty_tableSvg"/>
                     {e.to}</td>
-                <td className='histoty_tableValue'>{e.date}</td>
+                <td className='histoty_tableValue out'>{e.date}</td>
                 <td className='histoty_tableValue'>{e.type}</td>
                 <td className='histoty_tableValue last'>{e.ammount}</td>
             </tr>)}
