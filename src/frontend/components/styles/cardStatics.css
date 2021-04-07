@@ -1,0 +1,72 @@
+/*  main container */
+.statics_container{
+    border: 10px solid transparent;
+}
+/* main title */
+.statics_title{
+    font-weight: 600;
+    font-size: 1.5em;
+}
+/* progresive bars */
+.statics_barsContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+.statics_bar{
+    display: flex;
+    margin-bottom: 10px;
+
+}
+.statics_barProgresive{
+    height: 10px;
+    width: 90%;
+    background-color: var(--grey);
+    border-radius: 20px;
+}
+.statics_barProgesiveContainer{
+    width: 90%;
+    margin-bottom: 2%;
+}
+.statics-barProgresiveDescription{
+    margin-top: 2%;
+}
+
+/* fill of the bar */
+.statics_barProgresiveFill{
+    height: 10px;
+    background-color: #197BBD;
+    border-radius: 20px;
+    width: 25%;
+    
+}
+/* icon */
+.statics_barIcon{
+    padding: 5px;
+    border-radius: 5px;
+    height: 10%;
+    margin-right: 10px;
+
+}
+/* color changer svg */
+#one{
+    background-color:#FCAE73;
+}
+#two{
+    background-color:#209D43;
+}
+#three{
+    background-color:#70A6E8;
+}
+#oneV > path, #oneV{
+    stroke: #FCAE73;
+    background-color: #FFEADA;
+}
+#twoV > path, #twoV{
+    stroke: #209D43;
+    background-color: #DDF9E4;
+}
+#threeV > path, #threeV {
+    stroke: #70A6E8;
+    background-color: #E4F0FF;
+}

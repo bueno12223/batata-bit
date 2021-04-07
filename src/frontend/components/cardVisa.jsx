@@ -27,7 +27,7 @@ const CardVisa = () =>{
                         <p className='overview_balancedescrip'>Ingresos</p>
                     </div>
                     <div className="">
-                        <h4 className='overview_balanceSpend'>-150$</h4>
+                        <h4 className='overview_balanceSpend'>-200$</h4>
                         <p className='overview_balancedescrip'>Gastos</p>
                     </div>
                    

@@ -1,0 +1,55 @@
+.transaction_title{
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.transacions_friensContainer{
+    display: flex;
+    overflow: auto;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.transacions_input{
+    display: flex;
+}
+.transacions_input > * {
+    height: 30px;
+}
+.transacions_inputTextContainer{
+    width: 55%;
+    display: flex;
+    border: 1px solid #197BBD;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+/* input */
+.transacions_inputText{
+    width: 83%;
+    height: 97%;
+    border: none;
+    margin: 0.5px;
+    outline: none;
+    color: #C7C7C7;
+    margin-left: 5px;
+}
+.transacions_inputText::placeholder, .transacions_inputDolar{
+    color: #C7C7C7;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+.transacions_inputDolar{
+    font-size: 1.8em;
+    color: #197BBD ;
+    margin-top: 2px;
+}
+/* button */
+.transacions_inputButton{
+    background-color: var(--bitcoin-orange);
+    border-radius: 13.617px;
+    font-weight: 1000;
+    font-size: 1.2em;
+    font-family: 'Lato', sans-serif;
+    margin: 0 auto;
+    width: 38%;
+}

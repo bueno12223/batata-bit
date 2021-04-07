@@ -63,6 +63,10 @@
     justify-self: center;
     height: 79%;
 }
+.card_RigthTransactions{
+    border: 10px solid transparent;
+    height: fit-content;
+}
 /* tap is each div in goal */
 
 
