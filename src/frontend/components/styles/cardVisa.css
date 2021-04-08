@@ -94,11 +94,15 @@
     margin-top: 10px;
     border-radius: 20px;
 }
+.card_RigthGreate{
+    background: linear-gradient(180deg, #ED654C 0%, #D05842 100%); 
+}
 .overview_progresiveFill{
     height: 10px;
     background-color: #197BBD;
     border-radius: 20px;
 }
+
 /* media querys */
 @media(min-width: 540px){
     .overview_balance{
@@ -118,12 +122,13 @@
 @media( min-width: 900px){
     .overview_balance{
         flex-direction: row;
+        margin: auto;
     }
     .overview_balanceIncomer, .overview_balanceSpend{
         margin-left: 5px;
     }
 }
-@media( min-width: 1180px){
+@media( min-width: 1050px){
     .overview_balance{
         flex-direction: column;
     }

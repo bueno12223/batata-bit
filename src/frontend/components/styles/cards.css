@@ -28,7 +28,6 @@
 }
 /* left card */
 .card_LeftOverview{
-    height: 50vh;
     max-width: 450px;
     margin: 0 auto;
     border: 21px solid white;
@@ -67,7 +66,20 @@
     border: 10px solid transparent;
     height: fit-content;
 }
-/* tap is each div in goal */
+/* Loal section */
+.loal_svg{
+    width: 100%;
+    height: 100%;
+    margin-left: -6px;
+}
+.loal_title{
+    position: relative;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.5em;
+    bottom: 65px;
+    left: 10px;
+}
 
 
 .card_RigthStatics{
@@ -76,6 +88,7 @@
 }
 .card_RigthTransactions{
     grid-column: 2 span;
+    height: auto;
 }
 /* media query Mobile first */
 @media(min-width: 425px){
@@ -107,6 +120,7 @@
     .cards_RigthContainer{
         margin-left: 0px;
         margin-top: 34px;
+        margin-right: 10px;
     }
     .cards_leftContainer{
         height: 90vh;
@@ -116,7 +130,7 @@
         margin-bottom: 6%;
     }
     .card_LeftHistory{
-        height: 39%;
+        height: 50%;
     }
 }
 @media(min-width: 1000px){
