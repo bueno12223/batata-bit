@@ -1,16 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './styles/home.css';
 
 import Navbar from '../components/navbar';
 import Header from '../components/header';
 import Cards from '../components/cards';
-const Home = () => (
+const Home = () => {
+        const [activate, setActivation] = useState(0);
+        const handleActivate = () => {
+            setActivation(activate + 1)
+        }
+    return(
     <React.Fragment>
         <div className="border">
-        <Navbar></Navbar>
+        <Navbar activate={activate}  ></Navbar>
         <div className="rigthSection">
         <div className="header">
-        <Header></Header>
+        <Header handleNavbarActivation={() => handleActivate()}></Header>
         </div>
         <div className="cards_container">
             <Cards></Cards>
@@ -23,6 +28,6 @@ const Home = () => (
     
         
     
-)
+)}
 
 export default Home;

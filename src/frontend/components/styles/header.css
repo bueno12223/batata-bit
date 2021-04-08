@@ -29,6 +29,10 @@
     fill: #197BBD;
     cursor: pointer;
 }
+.header_sideBar:hover > path{
+    stroke: #197BBD;
+    cursor: pointer;
+}
 .header_userAvatar{
     width: 50px;
     

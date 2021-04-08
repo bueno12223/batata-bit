@@ -1,7 +1,21 @@
 .navbar{
     max-width: 180px;
     box-shadow: 1px 0px 0px 0px #d6d6d6;
-    display: none;
+    margin-left: -220px;
+    position: absolute;
+    margin-top: -21px;
+    transition: 0.1s;
+}
+.navbar_activate{
+    margin-left: -20px;
+    background-color: white;
+    border-radius: 20px;
+    max-width: 200px;
+    transition: 0.1s;
+    height: 100%;
+    position: absolute;
+    height: 220%;
+    margin-top: -21px;
 }
 .navrbar_menuSideBar{
     margin-top: 100px;
@@ -65,7 +79,7 @@
     margin-top: 20px;
 }
 .navbar_upgradeImg{
-    margin-left: 13%;
+    margin-left: 24%;
 }
 .navbar_upgradeButton{
     background-color: var(--bitcoin-orange);
@@ -86,7 +100,8 @@
 
 @media (min-width: 775px){
     .navbar{
-        display: inline;
+        margin-left: 0px;
+        position: relative;
     }
 }
 

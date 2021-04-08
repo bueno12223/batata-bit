@@ -36,11 +36,12 @@
 }
 .overview_visaNumbers{
     padding: 0 auto;
-    font-size: 2em;
+    font-size: 1.5em;
     margin-top: 20px;
     margin-left: 38px;
     width: 196px;
     margin: 10px auto;
+    padding-left: 15%;
 
 }
 .overview_visaUser{
@@ -104,6 +105,12 @@
 }
 
 /* media querys */
+@media(min-width: 360px){
+    .overview_visaNumbers{
+        font-size: 2em;
+        padding-left: 0;
+    }
+}
 @media(min-width: 540px){
     .overview_balance{
         flex-direction: column; 
