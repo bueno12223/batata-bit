@@ -11,26 +11,11 @@ const initialState = {
         visa: {
         },
         transacctions: [
-            {to: 'María', date: '12 de Dic', type:'restaurante', ammount: '200$', id: 1  },
-            { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 2 },
-            {to: 'María', date: '12 de Dic', type:'ocio', ammount: '200$', id: 3  },
-            { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 4 },
-            {to: 'María', date: '12 de Dic', type:'transacción', ammount: '200$', id: 5  },
-            { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 6 },
-            {to: 'María', date: '12 de Dic', type:'ocio', ammount: '200$', id: 7  },
-            { to: 'Jose', date: '10 de Dic', type:'comida', ammount: '50$', id: 8 },
-            {to: 'María', date: '12 de Dic', type:'transacción', ammount: '200$', id: 9  },
+
             ],
         goals: [
-
         ],
-        userStadistics: [14, 18, 90],
         userFriends: [
-                {name: 'Ana', email: 'ana@gmail.com', id: 1 },
-                {name: 'Luis', email: 'luis@gmail.com',  id: 4 },
-                {name: 'maikol',email: 'maikol@gmail.com',  id: 3 },
-                {name: 'ginger',email: 'ginger@gmail.com',  id: 6 },
-                {name: 'jose',email: 'jose@gmail.com',  id: 5 },
         ]
 
 

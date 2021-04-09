@@ -1,9 +1,18 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { connect } from 'react-redux';
 
-import ocio from '../images/types/shoppingOrange.svg';
 import './styles/cardStatics.css';
 function cardStatics(props) {
+    const {userPersonalData: {goals}} = props;
+    let progress = []
+    if(goals.length != 0){
+        goals.forEach(e => {
+            let total = e.ammount / e.goal * 100;
+            progress.push(total)
+        });
+    }
+    
+    
     return (
         <div className='statics_container'>
             <h3 className='statics_title'>Estadísticas de usuario</h3>
@@ -16,9 +25,9 @@ function cardStatics(props) {
                 </svg>
                     <div className="statics_barProgesiveContainer">
                         <div className="statics_barProgresive">
-                            <div style={{width: `${props.userPersonalData.userStadistics[0]}%` }} className="statics_barProgresiveFill" id='one'></div>
+                            <div style={{width: `${progress[0] || 0}%` }} className="statics_barProgresiveFill" id='one'></div>
                         </div>
-                        <p className='statics-barProgresiveDescription'>Transporte</p>
+                        <p className='statics-barProgresiveDescription'>{goals.length != 0 ? goals[0].title : "No tienes una meta que seguir "}</p>
                     </div>
                 </div>
                 <div className="statics_bar">
@@ -29,9 +38,9 @@ function cardStatics(props) {
                 </svg>
                     <div className="statics_barProgesiveContainer">
                         <div className="statics_barProgresive">
-                            <div style={{width: `${props.userPersonalData.userStadistics[1]}%`}} className="statics_barProgresiveFill" id='two'></div>
+                            <div style={{width: `${progress[1] || 0}%`}} className="statics_barProgresiveFill" id='two'></div>
                         </div>
-                        <p className='statics-barProgresiveDescription'>Compras</p>
+                        <p className='statics-barProgresiveDescription'>{goals.length != 0 ? goals[1].title : "No tienes una meta que seguir "}</p>
                     </div>
                 </div>
                 <div className="statics_bar">
@@ -42,9 +51,9 @@ function cardStatics(props) {
                 </svg>
                     <div className="statics_barProgesiveContainer">
                         <div className="statics_barProgresive">
-                            <div style={{width: `${props.userPersonalData.userStadistics[2]}%` }} className="statics_barProgresiveFill" id='three'></div>
+                            <div style={{width: `${progress[2] || 0}%` }} className="statics_barProgresiveFill" id='three'></div>
                         </div>
-                        <p className='statics-barProgresiveDescription'>Ahorro</p>
+                        <p className='statics-barProgresiveDescription'>{goals.length != 0 ? goals[2].title : "No tienes una meta que seguir "}</p>
                     </div>
                 </div>
             </div>
@@ -55,9 +64,8 @@ function cardStatics(props) {
 const mapStateToProps = state => {
     return{
         userPersonalData: {
-            userStadistics: state.userPersonalData.userStadistics
-
+            goals: state.userPersonalData.goals
         }
     }
 }
-export default connect(mapStateToProps, null)(cardStatics)
+export default connect(mapStateToProps, null)(cardStatics);
