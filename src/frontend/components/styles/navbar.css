@@ -5,6 +5,7 @@
     position: absolute;
     margin-top: -21px;
     transition: 0.1s;
+    box-shadow: 0px 16px 24px rgb(0 0 0 / 6%);
 }
 .navbar_activate{
     margin-left: -20px;
@@ -14,7 +15,7 @@
     transition: 0.1s;
     height: 100%;
     position: absolute;
-    height: 220%;
+    height: 276%;
     margin-top: -21px;
 }
 .navrbar_menuSideBar{
@@ -22,8 +23,9 @@
 }
 /* is the section whit the logo in the navBar */
 .logo{
+    margin-top: 7%;
+    margin-left: 7%;
     display: flex;
-    margin-top: 1%;
 }
 .logo_text{
     padding-left: 1%;
@@ -99,10 +101,20 @@
 }
 
 @media (min-width: 775px){
-    .navbar{
-        margin-left: 0px;
+    .navbar_activate, .navbar{
         position: relative;
+        transition: 0s;
+        margin-left: 0px;
+        margin-top: 0px;
+        box-shadow: 1px 0px 0px 0px rgb(0 0 0 / 6%);
+        border-radius:0px;
+        height: 100%;
     }
+    .logo{
+        margin-top: 1%;
+        margin-left: 0px;
+    }
+
 }
 
     

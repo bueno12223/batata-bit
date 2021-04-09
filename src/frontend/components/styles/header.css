@@ -18,7 +18,7 @@
 
 }
 /* user data info ... */
-.header_userMail{
+.header_userMail, .header_userHamburger{
     margin-right: 10px;
 }
 .header_userMail:hover > path {
@@ -61,5 +61,10 @@
 @media(min-width: 500px){
     .header_Text{
         display: inline;
+    }
+}
+@media(min-width: 770px){
+    .header_userHamburger{
+        display: none;
     }
 }

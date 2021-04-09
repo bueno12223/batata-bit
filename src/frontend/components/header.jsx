@@ -8,7 +8,7 @@ const Header = (props) => (
                 <p className='header_textDescription'>Desde aquí puedes ver y realizar transacciones</p>
             </div>
             <div className="header_user">
-            <svg className='header_userMail' onClick={(e) =>props.handleNavbarActivation()} width="30" height="30" viewBox="0 0 30 30" fill='none' xmlns="http://www.w3.org/2000/svg">
+            <svg className='header_userHamburger ' onClick={(e) =>props.handleNavbarActivation()} width="30" height="30" viewBox="0 0 30 30" fill='none' xmlns="http://www.w3.org/2000/svg">
                 <rect width="29.1405" height="29.427" transform="translate(0.690384 0.250763)"/>
                     <path d="M11.4516 9.25076H23.8309" stroke='#C7C7C7' strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E3E3E3"/>
                     <path d="M11.4516 14.9643H23.8309" stroke='#C7C7C7' strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E3E3E3"/>

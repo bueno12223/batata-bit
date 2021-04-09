@@ -6,7 +6,7 @@ import Batata from '../images/icons/batata.svg';
 const Navbar = (props) => {
     console.log(props)
 return(
-    <div className={props.activate%2 == 0 ? 'navbar card' : 'navbar_activate card'}>
+    <div className={props.activate%2 == 0 ? 'navbar' : 'navbar_activate card'}>
         <div className="logo">
         <img src={Batata} alt=""/>
             <h3 className="logo_text">BatataBit</h3> 
