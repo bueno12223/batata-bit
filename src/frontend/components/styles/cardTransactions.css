@@ -5,7 +5,7 @@
 }
 .transacions_friensContainer{
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     text-align: center;
     margin-bottom: 5px;
 }
@@ -52,4 +52,21 @@
     font-family: 'Lato', sans-serif;
     margin: 0 auto;
     width: 38%;
+    cursor: pointer;
+}
+.transacions_friensAvatar{
+    height: 40px;
+    border-radius: 20px;
+}
+.transacions_friensItem{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.transacions_friensItem:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: 0.1s;
+}
+.transacions_friensItem:visited{
+    background-color: black;
 }

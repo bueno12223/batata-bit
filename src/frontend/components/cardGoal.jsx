@@ -1,17 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 import GoalItem from './goalItem.jsx';
 
 import './styles/cardGoal.css'
-const cardGoal = () => {
-    const goal = [
-        {ammount: 15, date: '12/82/12', title: 'Vacaciones', id: 1},
-        {ammount: 101, date: '12/12/72', title: 'ahorros', id: 3},
-        {ammount: 9, date: '22/12/12', title: 'Juegos', id: 2},
-        {ammount: 101, date: '12/12/72', title: 'ahorros', id: 3},
-        {ammount: 9, date: '22/12/12', title: 'Juegos', id: 2}
-    ]
-
+const cardGoal = (props) => {
+    const {userPersonalData:{ goals}} = props
     return(
         <React.Fragment>
             <div className="card_RightGoalTitle">
@@ -23,18 +17,25 @@ const cardGoal = () => {
                 </svg>
             </div>
             <div className="goalItem">
-                {goal.map( e => <GoalItem key={e.id} {...e}></GoalItem> )}
+                {goals.length == 0 && (
+                    <div className="goalitem_noGoal">
+                        <h2>No Hay metas pendientes :(</h2>
+                        <p>Pronerme una nueva meta!!</p>
+                    </div>
+                    
+                )}
+                {goals.map( e => <GoalItem key={e.id} {...e}></GoalItem> )}
             </div>
-            
-            {/* {goal.map( e => (
-                <div className="card card_RightGoalTap">
-                <GoalItem key={e.id} {...e}></GoalItem>
-            </div>
-            ) )} */}
             
 
         </React.Fragment>
     )
 }
-
-export default cardGoal;
+const mapStateToProps = state => {
+    return{
+        userPersonalData: {
+            goals: state.userPersonalData.goals
+        }
+    }
+}
+export default connect(mapStateToProps, null)(cardGoal);

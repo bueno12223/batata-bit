@@ -1,4 +1,4 @@
-export const navbarActivation = payload => ({
-    type: 'ACTIVATE_NAVBAR',    
+export const doTransaccion = payload => ({
+    type: 'DO_TRANSACCION',    
     payload,
     });

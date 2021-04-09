@@ -1,9 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux';
 
 import ocio from '../images/types/shoppingOrange.svg';
-
 import './styles/cardStatics.css';
-function cardStatics() {
+function cardStatics(props) {
     return (
         <div className='statics_container'>
             <h3 className='statics_title'>Estadísticas de usuario</h3>
@@ -16,7 +16,7 @@ function cardStatics() {
                 </svg>
                     <div className="statics_barProgesiveContainer">
                         <div className="statics_barProgresive">
-                            <div className="statics_barProgresiveFill" id='one'></div>
+                            <div style={{width: `${props.userPersonalData.userStadistics[0]}%` }} className="statics_barProgresiveFill" id='one'></div>
                         </div>
                         <p className='statics-barProgresiveDescription'>Transporte</p>
                     </div>
@@ -29,7 +29,7 @@ function cardStatics() {
                 </svg>
                     <div className="statics_barProgesiveContainer">
                         <div className="statics_barProgresive">
-                            <div className="statics_barProgresiveFill" id='two'></div>
+                            <div style={{width: `${props.userPersonalData.userStadistics[1]}%`}} className="statics_barProgresiveFill" id='two'></div>
                         </div>
                         <p className='statics-barProgresiveDescription'>Compras</p>
                     </div>
@@ -42,7 +42,7 @@ function cardStatics() {
                 </svg>
                     <div className="statics_barProgesiveContainer">
                         <div className="statics_barProgresive">
-                            <div className="statics_barProgresiveFill" id='three'></div>
+                            <div style={{width: `${props.userPersonalData.userStadistics[2]}%` }} className="statics_barProgresiveFill" id='three'></div>
                         </div>
                         <p className='statics-barProgresiveDescription'>Ahorro</p>
                     </div>
@@ -52,5 +52,12 @@ function cardStatics() {
         </div>
     )
 }
+const mapStateToProps = state => {
+    return{
+        userPersonalData: {
+            userStadistics: state.userPersonalData.userStadistics
 
-export default cardStatics
+        }
+    }
+}
+export default connect(mapStateToProps, null)(cardStatics)
