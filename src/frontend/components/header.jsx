@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/header.css';
 import Gravatar from './gravatar';
+import {connect} from 'react-redux';
 const Header = (props) => (
     <div className="header">
             <div className="header_text">
@@ -8,7 +9,7 @@ const Header = (props) => (
                 <p className='header_textDescription'>Desde aquí puedes ver y realizar transacciones</p>
             </div>
             <div className="header_user">
-            <svg className='header_userHamburger ' onClick={(e) =>props.handleNavbarActivation()} width="30" height="30" viewBox="0 0 30 30" fill='none' xmlns="http://www.w3.org/2000/svg">
+            <svg className='header_userHamburger ' onClick={() =>props.handleNavbarActivation()} width="30" height="30" viewBox="0 0 30 30" fill='none' xmlns="http://www.w3.org/2000/svg">
                 <rect width="29.1405" height="29.427" transform="translate(0.690384 0.250763)"/>
                     <path d="M11.4516 9.25076H23.8309" stroke='#C7C7C7' strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E3E3E3"/>
                     <path d="M11.4516 14.9643H23.8309" stroke='#C7C7C7' strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="#E3E3E3"/>
@@ -24,10 +25,10 @@ const Header = (props) => (
             <svg className='header_userNotification' width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.7956 6.25281C15.7956 4.66151 15.1635 3.13539 14.0382 2.01017C12.913 0.884949 11.3869 0.252808 9.79559 0.252808C8.20429 0.252808 6.67817 0.884949 5.55295 2.01017C4.42773 3.13539 3.79559 4.66151 3.79559 6.25281C3.79559 13.2528 0.795593 15.2528 0.795593 15.2528H18.7956C18.7956 15.2528 15.7956 13.2528 15.7956 6.25281Z" fill="#E3E3E3"/>
             </svg>
-            <Gravatar className='header_userAvatar' email='berriojesus122@gmail.com'></Gravatar>
+            <Gravatar className='header_userAvatar' email={props.userAcconut.email}></Gravatar>
             <div className="header:userData">
                 <div className="header_Text">
-                <p className='header_TextName'><b>User name</b></p>
+                <p className='header_TextName'><b>{props.userAcconut.userId}</b></p>
                 <p className='header_TextOptions'>Opciones</p>
                 </div>
             </div>
@@ -38,5 +39,7 @@ const Header = (props) => (
     
 )
 
-
-export default Header;
+const mapStateToProps = state => {
+    return{userAcconut: state.userAcconut}
+}
+export default connect(mapStateToProps, null)(Header);

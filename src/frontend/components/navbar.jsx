@@ -96,8 +96,8 @@ return(
             <img className='navbar_upgradeImg' src={UpDatePlan} alt=""/>
             <button className="navbar_upgradeButton">Comprar premium
             <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.43262 8.90073V1.62207" stroke="#404040" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M0.793945 5.2614L4.43327 1.62207L8.0726 5.2614" stroke="#404040" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4.43262 8.90073V1.62207" stroke="#404040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M0.793945 5.2614L4.43327 1.62207L8.0726 5.2614" stroke="#404040" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
 
            </button>
