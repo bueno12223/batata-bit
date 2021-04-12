@@ -1,0 +1,136 @@
+main {
+    width: 100%;
+    height: auto;
+    
+}
+
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.main-exchange-container-title {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+   
+
+}
+
+.main-exchange-container div {
+    justify-content: center;
+}
+.main-exchange-container div img{
+    margin: 0 auto;
+    margin-bottom: 50px;
+    align-self: center;
+    max-width: 320px;
+    min-width: 100px;
+}
+.main-exchange-container h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: black;
+}
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color:#757575;
+}
+.main-currency-table .monedas  {
+    margin-bottom: 15px;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+
+.main-currency-table .monedas2  {
+    margin-bottom: 15px;
+    margin-top: 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);}
+
+.currency-table-contaier {
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;}
+
+.currency-table-contaier table {
+    width: 100%;
+    height: 100%;   
+}
+.currency-table-contaier td {
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+.currency-table-contaier .table-bitcoin{
+    border-radius: 15px 0 0;
+}
+.currency-table-contaier .table-right-top{
+    border-radius:  0 15px 0 0;
+}
+
+.currency-table-contaier .table-stelar{
+    border-radius:  0 0 0 15px  ;
+}
+ .currency-table-contaier .table-right-bottom{
+    border-radius:  0 0 15px 0   ;
+ }
+ .currency-table-contaier .down{
+     width: 15px;
+     height: 15px;
+     margin-left: 10px;
+     background-image: url(../../images/landing/baja.svg);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+ }
+ .currency-table-contaier .up{
+    width: 15px;
+     height: 15px;
+     margin-left: 10px;
+     background-image: url(../../images/landing/sube.svg);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+}
+.date {
+    width: 250px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;}
+
+.date2 {
+    width: 250px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-blue);
+    border-radius: 8px;}
+
+.date p, .date2 p{
+    font-size: 1.2rem;
+    height: 1.5rem;
+    color: var(--warm-black);
+    }
