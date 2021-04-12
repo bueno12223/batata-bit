@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import Gravatar from './gravatar';
+import Gravatar from '../general/gravatar';
 
-import {doTransaccion} from '../actions';
-import plus from '../images/friends/plus.svg';
+import {doTransaccion} from '../../actions';
+import plus from '../../images/friends/plus.svg';
 import './styles/cardTransactions.css';
 function cardTransacions(props) {
     const {userPersonalData: {userFriends} } = props;

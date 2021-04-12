@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/tableLanding.css';
 
-import fondo from '../images/landing/fondoHeader.png';
+import fondo from '../../images/landing/fondoHeader.png';
 
 function tableLanding() {
     return (

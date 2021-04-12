@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Batata from '../images/icons/batata.svg';
-import arrow from '../images/landing/arrow.svg';
+import arrow from '../../images/landing/arrow.svg';
 import './styles/headerLanding.css';
 function headerLanding() {
     return (

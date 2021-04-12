@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/header.css';
-import Gravatar from './gravatar';
+import Gravatar from '../general/gravatar';
 import {connect} from 'react-redux';
 const Header = (props) => (
     <div className="header">

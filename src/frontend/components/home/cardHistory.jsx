@@ -2,10 +2,7 @@ import React from 'react';
 
 import './styles/cardsHistory.css';
 
-import ocio from '../images/types/shoping.svg';
-import arrow from '../images/types/arrow.svg';
-import person from '../images/types/person.svg';
-import truck from '../images/types/truck.svg';
+import arrow from '../../images/types/arrow.svg';
 import { connect } from 'react-redux';
 const CardHistory = (props) => {
     const {userPersonalData: { transacctions } } = props;

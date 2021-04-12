@@ -3,7 +3,26 @@ main {
     height: auto;
     
 }
-
+.main-flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex-table{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.main-section-container{
+    width: 50%;
+}
+.background-img{
+    margin: auto;
+}
 .main-exchange-container{
     width: 100%;
     height: auto;
@@ -95,7 +114,7 @@ main {
      width: 15px;
      height: 15px;
      margin-left: 10px;
-     background-image: url(../../images/landing/baja.svg);
+     background-image: url(../../../images/landing/baja.svg);
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;
@@ -105,7 +124,7 @@ main {
     width: 15px;
      height: 15px;
      margin-left: 10px;
-     background-image: url(../../images/landing/sube.svg);
+     background-image: url(../../../images/landing/sube.svg);
      background-size: cover;
      background-position: center;
      background-repeat: no-repeat;

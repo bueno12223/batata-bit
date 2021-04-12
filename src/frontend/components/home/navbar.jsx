@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles/navbar.css';
 
-import UpDatePlan from '../images/icons/updatePlan.svg';
-import Batata from '../images/icons/batata.svg';
+import UpDatePlan from '../../images/icons/updatePlan.svg';
+import Batata from '../../images/icons/batata.svg';
 const Navbar = (props) => {
     console.log(props)
 return(

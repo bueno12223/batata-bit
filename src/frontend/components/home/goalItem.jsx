@@ -1,8 +1,8 @@
 import React from 'react';
 
-import play from '../images/goalIcons/play.svg'
-import brush from '../images/goalIcons/brush.svg'
-import mountain from '../images/goalIcons/mountain.svg'
+import play from '../../images/goalIcons/play.svg'
+import brush from '../../images/goalIcons/brush.svg'
+import mountain from '../../images/goalIcons/mountain.svg'
 
 import './styles/goalItem.css';
 const CardGoal = ({ammount, date, title}) =>{ 

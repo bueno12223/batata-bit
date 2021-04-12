@@ -1,9 +1,9 @@
 import React,{useState} from 'react';
 import './styles/home.css';
 
-import Navbar from '../components/navbar';
-import Header from '../components/header';
-import Cards from '../components/cards';
+import Navbar from '../components/home/navbar';
+import Header from '../components/home/header';
+import Cards from '../components/home/cards';
 const Home = () => {
         const [activate, setActivation] = useState(0);
         const handleActivate = () => {

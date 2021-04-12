@@ -12,7 +12,7 @@
     height: 25px;
     top: -15px;
     left: calc(50% - 20px); 
-    background-image: url(../../images/icons/batata.svg);
+    background-image: url(../../../images/icons/batata.svg);
 }
 .product-detail-title {
     width: 90%;
@@ -59,16 +59,16 @@
     background-repeat: no-repeat;
 }
 .product-detail-card #clock{
-    background-image: url(../../images/landing/clock.svg);
+    background-image: url(../../../images/landing/clock.svg);
 }
 .product-detail-card #eye{
-    background-image: url(../../images/landing/eye.svg);
+    background-image: url(../../../images/landing/eye.svg);
 }
 .product-detail-card #money{
-    background-image: url(../../images/landing/dolar.svg);
+    background-image: url(../../../images/landing/dolar.svg);
 }
 .product-detail-card #check{
-    background-image: url(../../images/landing/check.svg);
+    background-image: url(../../../images/landing/check.svg);
 }
 .product-card-title{
     margin-bottom: 15px;
