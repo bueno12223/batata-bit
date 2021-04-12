@@ -39,10 +39,11 @@ body{
 }
 .login_labelSubmit{
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     width: 100%;
     padding: 5px;
     height: 35px;
+    background-color: var(--bitcoin-orange);
 }
 .login_labelRemember{
     display: flex;

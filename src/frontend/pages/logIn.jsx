@@ -1,7 +1,6 @@
 import React from 'react'
 import './styles/home.css';
 import './styles/logIn.css';
-
 function logIn() {
     return (
         <div className='border border_logIn'>

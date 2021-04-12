@@ -61,7 +61,7 @@ return(
                     <path d="M17.2918 7.2436H10.8862C10.4614 7.2436 10.0541 7.41232 9.7538 7.71264C9.45348 8.01296 9.28476 8.42029 9.28476 8.84501V21.6563C9.28476 22.081 9.45348 22.4883 9.7538 22.7886C10.0541 23.089 10.4614 23.2577 10.8862 23.2577H20.4946C20.9193 23.2577 21.3267 23.089 21.627 22.7886C21.9273 22.4883 22.096 22.081 22.096 21.6563V12.0478L17.2918 7.2436Z" stroke="#C7C7C7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M17.2919 7.24338V12.0476H22.0962" stroke="#C7C7C7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                    <p>Facturas</p>
+                    <p>Depósitos</p>
                 </div>
             </button>
                 </a>
