@@ -1,0 +1,68 @@
+body{
+    background-color: #a8a8a8;
+}
+.border_logIn{
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+.border_logIn > h2{
+    font-size: 2.1em;
+}
+.login_label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 70%;
+    
+}
+.login_labelForm {
+    border: 1px solid #C7C7C7 ;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 100%;
+}
+.login_labelForm::placeholder{
+    color: #C7C7C7;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+}
+.login_labelSubmit{
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    height: 35px;
+}
+.login_labelRemember{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.login_labelRemember > p {
+    font-size: 1.2em;
+}
+.login_auth0{
+    display: flex;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    align-items: center;
+    border-radius: 20px ;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+.login_auth0 > p{
+    font-size: 1.5em;
+    
+}
