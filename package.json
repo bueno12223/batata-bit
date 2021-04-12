@@ -4,7 +4,7 @@
   "description": "Landing page batata-bit",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server/index",
+    "build": "webpack-cli --config webpack.config.js",
     "dev": "nodemon src/server/index"
   },
   "repository": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/bueno12223/bueno12223#readme",
   "dependencies": {
     "@babel/register": "^7.13.14",
+    "asset-require-hook": "^1.2.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.2.0",
     "dotenv": "^8.2.0",
@@ -28,7 +29,8 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.1",
     "express": "^4.17.1",
-    "file-loader": "^6.2.0",
+    "helmet": "^4.4.1",
+    "ignore-styles": "^5.0.1",
     "md5": "^2.3.0",
     "mongoose": "^5.12.3",
     "react": "^17.0.2",
@@ -49,7 +51,10 @@
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
     "babel-loader": "^8.2.2",
+    "compression-webpack-plugin": "^7.1.2",
+    "file-loader": "5.1.0",
     "mini-css-extract-plugin": "^1.4.0",
+    "terser-webpack-plugin": "^5.1.1",
     "webpack": "^5.30.0",
     "webpack-cli": "^4.6.0"
   }

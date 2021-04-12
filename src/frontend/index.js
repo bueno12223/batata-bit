@@ -4,28 +4,22 @@ import App from './routers/App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducer from './reducers';
+import { createBrowserHistory }from 'history';
+import {Router} from 'react-router-dom';
 
-const initialState = {
-    userAcconut: {userId: 'bueno122', email: 'berriojesus122@gmail.com'},
-    userPersonalData: {
-        visa: {
-        },
-        transacctions: [
+const history = createBrowserHistory();
+const preloadedState = window.__PRELOADED_STATE__;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, preloadedState, composeEnhancers());
+delete window.__PRELOADED_STATE__;
 
-            ],
-        goals: [
-        ],
-        userFriends: [
-        ]
+require('ignore-styles');
 
-
-        
-    } 
-
-}
-const store = createStore(reducer, initialState)
-
-ReactDOM.render(
-    <Provider store={store}><App></App></Provider>
+ReactDOM.hydrate(
+    <Provider store={store}>
+        <Router history={history}>
+            <App></App>
+        </Router>
+        </Provider>
     , document.getElementById('app')
 );
