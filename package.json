@@ -4,6 +4,7 @@
   "description": "Landing page batata-bit",
   "main": "index.js",
   "scripts": {
+    "start": "node src/server/index",
     "dev": "nodemon src/server/index"
   },
   "repository": {
