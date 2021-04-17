@@ -10,17 +10,22 @@ if (isDev) {
 };
 
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry,
   mode: process.env.ENV,
   output: {
     path: path.resolve(__dirname, 'src/server/public'),
-    filename: 'assets/app.js',
+    filename: isDev ? 'assets/app.js' : 'assets/app-[hash].js',
     publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
   module: {
     rules: [
@@ -65,7 +70,7 @@ module.exports = {
     }),
     isDev ? new webpack.HotModuleReplacementPlugin() : ()=> {},
     new MiniCssExtractPlugin({
-        filename: 'assets/app.css'
-    }), 
+      filename: isDev ? 'assets/app.css' : 'assets/app-[hash].css',
+  }), 
   ],
 };
