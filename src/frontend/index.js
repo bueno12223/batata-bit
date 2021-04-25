@@ -14,7 +14,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, preloadedState, composeEnhancers(applyMiddleware(thunk)));
 delete window.__PRELOADED_STATE__;
 
-require('ignore-styles');
 
 ReactDOM.hydrate(
     <Provider store={store}>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { registerUser } from "../actions";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -7,7 +8,7 @@ import PropTypes from 'prop-types';
 import './styles/home.css';
 import './styles/logIn.css';
 
-function singIn() {
+function singUp(props) {
     const [form, setValues] = useState({
         email: '',
         id: '',
@@ -60,8 +61,8 @@ const mapDispatchToProps = {
     registerUser,
   };
   
-  singIn.propTypes = {
+  singUp.propTypes = {
     registerUser: PropTypes.func,
   };
 
-  export default connect(null, mapDispatchToProps)(singIn);
+  export default connect(null, mapDispatchToProps)(singUp);

@@ -112,8 +112,14 @@
     font-weight: bold;
     line-height: 1.8rem;
     color: #201E1C;
-    
-    
+    cursor: pointer;
+}
+.plan-card-blue{
+    border-color: var(--secondary-blue);
+    background-color: var(--soft-blue);
+}
+.plan-card-blue span{
+    background-image: url(../../../images/landing/arrow\ blue.svg) !important;
 }
 .plan-card-CTA span{
     display: inline-block;

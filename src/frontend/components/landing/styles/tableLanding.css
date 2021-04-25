@@ -130,7 +130,7 @@ main {
      background-repeat: no-repeat;
 
 }
-.date {
+.date-rigth {
     width: 250px;
     height: 30px;
     margin: 0 auto;
@@ -139,7 +139,7 @@ main {
     background-color: var(--soft-orange);
     border-radius: 8px;}
 
-.date2 {
+.date {
     width: 250px;
     height: 30px;
     margin: 0 auto;
@@ -148,7 +148,7 @@ main {
     background-color: var(--soft-blue);
     border-radius: 8px;}
 
-.date p, .date2 p{
+.date > p{
     font-size: 1.2rem;
     height: 1.5rem;
     color: var(--warm-black);

@@ -1,6 +1,6 @@
 import Home from '../pages/home';
 import Login from '../pages/logIn';
-import SingIn from '../pages/singIn';
+import SingUp from '../pages/singUp';
 import Landing from '../pages/landing';
 
 const routes = [
@@ -11,13 +11,13 @@ const routes = [
   },
   {
     exact:true,
-    path: '/login',
+    path: '/log-in',
     component: Login,
   },
   {
     exact:true,
-    path: '/singin',
-    component: SingIn,
+    path: '/sing-up',
+    component: SingUp,
   },
   {
     name: '/home',

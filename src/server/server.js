@@ -13,7 +13,6 @@ import initialState from '../frontend/initalState';
 import helmet from 'helmet';
 
 import cookieParser from 'cookie-parser';
-import boom from '@hapi/boom';
 import passport from 'passport';
 import axios from 'axios';
 
@@ -28,7 +27,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // basic strategy
-require('./utils/oauth/strategies/basic');
 
 if (ENV  === 'development') {
   console.log('Development config');
@@ -54,6 +52,8 @@ const setResponse = (html, preloadedState) => {
   <!DOCTYPE html>
   <html>
     <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="assets/app.css" type="text/css">
       <title>Platzi Video</title>
     </head>
@@ -82,32 +82,7 @@ const renderApp = (req, res) => {
   res.send(setResponse(html, preloadedState));
 };
 
-app.post("/auth/sign-in", async function (req, res, next) {
-  passport.authenticate("basic", function (error, data) {
-    try {
-      if (error || !data) {
-        next(boom.unauthorized());
-      }
 
-      req.login(data, { session: false }, async function (error) {
-        if (error) {
-          next(error);
-        }
-
-        const { token, ...user } = data;
-
-        res.cookie("token", token, {
-          httpOnly: !config.dev,
-          secure: !config.dev
-        });
-
-        res.status(200).json(user);
-      });
-    } catch (error) {
-      next(error);
-    }
-  })(req, res, next);
-});
 
 app.post("/auth/sign-up", async function (req, res, next) {
   const { body: user } = req;

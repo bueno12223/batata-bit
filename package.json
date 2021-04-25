@@ -1,9 +1,10 @@
 {
-  "name": "y",
-  "version": "1.0.0",
-  "description": "Landing page batata-bit",
-  "main": "index.js",
+  "name": "batatabit",
+  "version": "0.1.0",
+  "description": " batata-bit cripto",
+  "main": "src/server/index",
   "scripts": {
+    "start": "demon src/server/index",
     "build": "webpack-cli --config webpack.config.js",
     "dev": "nodemon src/server/index"
   },

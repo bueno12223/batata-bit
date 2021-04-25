@@ -9,9 +9,7 @@ const initialState = {
         goals: [
         ],
         userFriends: [
-        ]
-
-
+        ],
         
     } 
 

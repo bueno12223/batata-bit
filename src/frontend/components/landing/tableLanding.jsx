@@ -32,7 +32,7 @@ function tableLanding() {
                             </table>
                         </div>
                     </div>
-                    <div className="date"><p><b> Actualizado:</b> 19 de julio a las 23:45</p></div>
+                    <div className="date date-rigth"><p><b> Actualizado:</b> 19 de julio a las 23:45</p></div>
                 </section>
                 <section className="main-section-container">
                     <div className="main-currency-table">
@@ -54,7 +54,7 @@ function tableLanding() {
                             </table>
                         </div>
                     </div>
-                    <div className="date2"><p><b> Actualizado:</b> 19 de julio a las 23:45</p></div>
+                    <div className="date date-left"><p><b> Actualizado:</b> 19 de julio a las 23:45</p></div>
                 </section>
             </div>
         </section>   
