@@ -7,7 +7,7 @@ import './styles/headerLanding.css';
 
 function headerLanding(props) {
     return (
-        <header className='header' >
+        <header className='header-landing' >
             <section className='header--menu-container' >
                 <Link to='/' >
                     <img src={BatataBit} alt="" className='header--menu-logo'/>

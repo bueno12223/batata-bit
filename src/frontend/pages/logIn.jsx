@@ -25,27 +25,31 @@ function logIn(props) {
         props.loginUser(form, '/');
       }
     return (
-        <section className='border border_logIn' >
-            <h2>Iniciar sesión</h2>
-            <form className='login_label' >
-                <input className='login_labelForm' placeholder='correo' onChange={updateInput} type="email" name="" id="" required/>
-                <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type="password" name="" id="" required/>
-                <input className='login_labelSubmit' type="submit" value="Registrarse" required/>
-                <Link to='/' className="login_labelRemember ">¿Olvidaste la contraseña?</Link>
-                <div className="login_labelRemember">
-                    <input type="checkbox" name="" id=""/>
-                    <p>Recordar inicio de sesión</p>
-                </div>
-                <div className="login_auth0">
-                <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/>
-                    <p>Iniciar sesión con Google</p>
-                </div>
-                <div className="login_auth0">
-                <img src="https://img.icons8.com/color/48/000000/facebook.png"/>
-                    <p>Iniciar sesión con facebook</p>
-                </div>
-            </form>
-        </section>
+          <section className='login-container'>
+          <article className='border border_logIn' >
+         
+         <h2>Iniciar sesión</h2>
+         <form className='login_label' >
+             <input className='login_labelForm' placeholder='correo' onChange={updateInput} type="email" name="" id="" required/>
+             <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type="password" name="" id="" required/>
+             <input className='login_labelSubmit' type="submit" value="Registrarse" required/>
+             <Link to='/' className="login_labelRemember ">¿Olvidaste la contraseña?</Link>
+             <div className="login_labelRemember">
+                 <input type="checkbox" name="" id=""/>
+                 <p>Recordar inicio de sesión</p>
+             </div>
+             <div className="login_auth0">
+             <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/>
+                 <p>Iniciar sesión con Google</p>
+             </div>
+             <div className="login_auth0">
+             <img src="https://img.icons8.com/color/48/000000/facebook.png"/>
+                 <p>Iniciar sesión con facebook</p>
+             </div>
+         </form>
+     </article>
+
+          </section>
     )
 }
 const mapDispatchToProps = {

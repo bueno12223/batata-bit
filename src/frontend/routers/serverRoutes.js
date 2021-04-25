@@ -1,4 +1,5 @@
-import Home from '../pages/home';
+import General from '../components/home/cards';
+
 import Login from '../pages/logIn';
 import SingUp from '../pages/singUp';
 import Landing from '../pages/landing';
@@ -20,8 +21,9 @@ const routes = [
     component: SingUp,
   },
   {
-    name: '/home',
-    component: Home,
+    exact:true,
+    path: '/home',
+    component: General,
   },
 ];
 

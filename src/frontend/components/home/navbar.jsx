@@ -1,8 +1,9 @@
 import React from 'react';
-import './styles/navbar.css';
+import { Link } from 'react-router-dom';
 
 import UpDatePlan from '../../images/icons/updatePlan.svg';
 import Batata from '../../images/icons/batata.svg';
+import './styles/navbar.css';
 const Navbar = (props) => {
 return(
     <div className={props.activate%2 == 0 ? 'navbar' : 'navbar_activate card'}>
@@ -12,7 +13,7 @@ return(
         </div>
         <div className="navrbar_menuSideBar">
             <ul>
-                <a href="">
+                <Link to='/home'>
                 <button className='menu_button' >
                 <div className="menu_option moveIt">
                 <svg className='menu_svg' width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,8 +24,8 @@ return(
                     <p>General</p>
                 </div>
             </button>
-                </a>
-                <a href="">
+                </Link>
+                <Link to='/home/transaccions'>
                 <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg' width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,8 +40,8 @@ return(
                     <p>Transacciones</p>
                 </div>
             </button>
-                </a>
-                <a href="">
+                </Link>
+                <Link to='/home/cards'>
                 <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg' width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,8 +52,8 @@ return(
                     <p>Tarjetas</p>
                 </div>
             </button>
-                </a>
-                <a href="">
+                </Link>
+                <Link to='/home/deposit'>
                 <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg' width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,8 +64,8 @@ return(
                     <p>Depósitos</p>
                 </div>
             </button>
-                </a>
-                <a href="">
+                </Link>
+                <Link to='/home/goals'>
                 <button className='menu_button'>
                 <div className="menu_option">
                 <svg className='menu_svg'  width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,8 +76,8 @@ return(
                     <p>Metas</p>
                 </div>
             </button>
-                </a>
-                <a href="">
+                </Link>
+                <Link to='/home/setting'>
                 <button className='menu_button'>
                 <div className="menu_option">
                     <svg className='menu_svg'  width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +88,7 @@ return(
                     <p>Ajustes</p>
                 </div>
             </button>
-                </a>
+                </Link>
             </ul>
         </div>
 

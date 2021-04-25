@@ -29,7 +29,8 @@ function singUp(props) {
       }
     
     return (
-        <div className='border border_logIn'>
+      <section className='login-container'>
+          <article className='border border_logIn'>
             <h2>Crear cuenta</h2>
             <form className='login_label' onSubmit={handleSubmit}>
                 <input className='login_labelForm' onChange={updateInput} placeholder='nombre y apellido' type="text" name="" id="" required/>
@@ -50,11 +51,11 @@ function singUp(props) {
                 <img src="https://img.icons8.com/color/48/000000/facebook.png"/>
                     <p>Crear cuenta con facebook</p>
                 </div>
-            </form>
+            </form> 
+        </article>
 
+      </section>
 
-            
-        </div>
     )
 }
 const mapDispatchToProps = {
