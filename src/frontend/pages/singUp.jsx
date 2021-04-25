@@ -32,15 +32,15 @@ function singUp(props) {
         <div className='border border_logIn'>
             <h2>Crear cuenta</h2>
             <form className='login_label' onSubmit={handleSubmit}>
-                <input className='login_labelForm' onChange={updateInput} placeholder='nombre y apellido' type="text" name="" id=""/>
-                <input className='login_labelForm' onChange={updateInput} placeholder='usuario' type="text" name="" id=""/>
-                <input className='login_labelForm' onChange={updateInput} placeholder='correo' type="email" name="" id=""/>
-                <input className='login_labelForm' onChange={updateInput} placeholder='contraseña' type="password" name="" id=""/>
+                <input className='login_labelForm' onChange={updateInput} placeholder='nombre y apellido' type="text" name="" id="" required/>
+                <input className='login_labelForm' onChange={updateInput} placeholder='usuario' type="text" name="" id="" required/>
+                <input className='login_labelForm' onChange={updateInput} placeholder='correo' type="email" name="" id="" required/>
+                <input className='login_labelForm' onChange={updateInput} placeholder='contraseña' type="password" name="" id="" required/>
                 <div className="login_labelRemember">
                     <input type="checkbox" name="" id=""/>
                     <p>Aceto los términos y condiciones</p>
                 </div>
-                <input className='login_labelSubmit' type="submit" value="Aceptar"/>
+                <input className='login_labelSubmit' type="submit" value="registrarse"/>
                 <Link to="/login" className="register__container--login"></Link>
                 <div className="login_auth0">
                 <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/>

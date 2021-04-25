@@ -24,12 +24,13 @@ function logIn(props) {
         props.loginUser(form, '/');
       }
     return (
-        <div className='border border_logIn' onSubmit={handleSubmit}>
+        <section className='border-login' >
             <h2>Iniciar sesión</h2>
-            <form className='login_label'>
+            <form className='login_label' >
                 <input className='login_labelForm' onChange={updateInput} type="email" name="" id=""/>
                 <input className='login_labelForm' onChange={updateInput} type="password" name="" id=""/>
-                <input className='login_labelSubmit' type="submit" value="Aceptar"/>
+                <input className='login_labelSubmit' type="submit" value="Registrarse"/>
+                <p>¿Olvidaste la contraseña?</p>
                 <div className="login_labelRemember">
                     <input type="checkbox" name="" id=""/>
                     <p>Recordar inicio de sesión</p>
@@ -43,10 +44,7 @@ function logIn(props) {
                     <p>Iniciar sesión con facebook</p>
                 </div>
             </form>
-
-
-            
-        </div>
+        </section>
     )
 }
 const mapDispatchToProps = {

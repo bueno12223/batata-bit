@@ -1,16 +1,22 @@
 body{
-    background-color: #a8a8a8;
+    background-color: var(--off-blue) !important;
+    background-image: url(https://i.postimg.cc/13m2d0Bx/backgrund.png);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
 }
 .border_logIn{
     margin: auto;
-    margin-top: 20px;
+    margin-top: 13vh;
     width: 100%;
     max-width: 410px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 90vh;
-    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    justify-content: center;
+    background-color: unset;
+    border: none;
+    color: var(--just-white);
 }
 .border_logIn > h2{
     font-size: 2.1em;
@@ -24,32 +30,43 @@ body{
     
 }
 .login_labelForm {
-    border: 1px solid #C7C7C7 ;
-    box-sizing: border-box;
-    border-radius: 20px;
+    border: 1px solid var(--just-white) ;
+    color: var(--just-white);
+    outline: none;
+    border-radius: 7px;
     margin-bottom: 10px;
-    height: 25px;
-    width: 100%;
+    height: 45px;
+    width: 300px;
+    background-color: transparent;
+    text-transform: uppercase;
+    padding-left: 5px;
+    font-size: 1em;
 }
 .login_labelForm::placeholder{
-    color: #C7C7C7;
+    color: var(--just-white);
     font-family: 'Lato', sans-serif;
     font-size: 1.2em;
     font-weight: 300;
+    background-color: unset;
 }
 .login_labelSubmit{
+    font-size: 1.3em;
+    font-weight: 550;
+    color: var(--off-blue);
     border: none;
-    border-radius: 5px;
-    width: 100%;
-    padding: 5px;
-    height: 35px;
-    background-color: var(--bitcoin-orange);
+    border-radius: 7px;
+    width: 200px;
+    height: 45px;
+    background-color: var(--just-white);
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+
 }
 .login_labelRemember{
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 .login_labelRemember > p {
     font-size: 1.2em;
