@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loginUser } from "../actions";
@@ -24,13 +25,13 @@ function logIn(props) {
         props.loginUser(form, '/');
       }
     return (
-        <section className='border-login' >
+        <section className='border border_logIn' >
             <h2>Iniciar sesión</h2>
             <form className='login_label' >
-                <input className='login_labelForm' onChange={updateInput} type="email" name="" id=""/>
-                <input className='login_labelForm' onChange={updateInput} type="password" name="" id=""/>
-                <input className='login_labelSubmit' type="submit" value="Registrarse"/>
-                <p>¿Olvidaste la contraseña?</p>
+                <input className='login_labelForm' placeholder='correo' onChange={updateInput} type="email" name="" id="" required/>
+                <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type="password" name="" id="" required/>
+                <input className='login_labelSubmit' type="submit" value="Registrarse" required/>
+                <Link to='/' className="login_labelRemember ">¿Olvidaste la contraseña?</Link>
                 <div className="login_labelRemember">
                     <input type="checkbox" name="" id=""/>
                     <p>Recordar inicio de sesión</p>

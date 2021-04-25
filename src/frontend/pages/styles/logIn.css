@@ -63,14 +63,14 @@ body{
 }
 .login_labelRemember{
     display: flex;
+    flex-direction: row;
     width: 100%;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: var(--just-white);
 }
-.login_labelRemember > p {
-    font-size: 1.2em;
-}
+
 .login_auth0{
     display: flex;
     margin-top: 20px;
