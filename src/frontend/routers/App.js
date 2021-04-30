@@ -9,13 +9,13 @@ import SingUp from '../pages/singUp';
 
 import './styles/main.css';
 
-const App = () => (
+const App = (props) => (
   <BrowserRouter>
     <Switch>
       <Route  exact path="/" component={Landing}   />
-      <Route  exact path='/home' component={Home} />
-      <Route  exact path="/log-in" component={LogIn}  />
-      <Route  exact path="/sing-up" component={SingUp}   />
+      <Route  exact path='/home' component={props.isLogged ? Home : LogIn}  />
+      <Route  exact path="/log-in" component={props.isLogged ? Home : LogIn}  />
+      <Route  exact path="/sing-up" component={props.isLogged ? Home : SingUp}   />
     </Switch>
   </BrowserRouter>
 )

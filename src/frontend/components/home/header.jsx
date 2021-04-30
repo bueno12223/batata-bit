@@ -25,7 +25,7 @@ const Header = (props) => (
             <svg className='header_userNotification' width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.7956 6.25281C15.7956 4.66151 15.1635 3.13539 14.0382 2.01017C12.913 0.884949 11.3869 0.252808 9.79559 0.252808C8.20429 0.252808 6.67817 0.884949 5.55295 2.01017C4.42773 3.13539 3.79559 4.66151 3.79559 6.25281C3.79559 13.2528 0.795593 15.2528 0.795593 15.2528H18.7956C18.7956 15.2528 15.7956 13.2528 15.7956 6.25281Z" fill="#E3E3E3"/>
             </svg>
-            
+            <Gravatar className='header_userAvatar' email={props.userAcconut.email}></Gravatar>
             <div className="header:userData">
                 <div className="header_Text">
                 <p className='header_TextName'><b>{props.userAcconut.userId}</b></p>

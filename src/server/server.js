@@ -73,17 +73,19 @@ const setResponse = (html, preloadedState) => {
 const renderApp = async (req, res) => {
   let InitalState = initialState
   const { email } = req.cookies;
-  console.log(email);
+  let isLogged = false
   if(email){
     const user = await axios.post(`${process.env.API_URL}/api/log-in`,{'email': email});
     InitalState = user.data.user;
+    isLogged = true
   }
+  
   const store = createStore(reducer, InitalState);
   const preloadedState = store.getState();
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
-        {renderRoutes(serverRoutes)}
+        {renderRoutes(serverRoutes(isLogged))}
       </StaticRouter>
     </Provider>,
   );

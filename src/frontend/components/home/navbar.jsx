@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import UpDatePlan from '../../images/icons/updatePlan.svg';
 import Batata from '../../images/icons/batata.svg';
+import { logOut } from '../../actions/index'
 import './styles/navbar.css';
 const Navbar = (props) => {
+    const handleLogOut = () => {
+        document.cookie = 'email=';
+        window.location.href = '/log-in';
+    }
 return(
     <div className={props.activate%2 == 0 ? 'navbar' : 'navbar_activate card'}>
         <div className="logo">
@@ -65,15 +69,15 @@ return(
                 </div>
             </button>
                 </Link>
-                <Link to='/home/goals'>
-                <button className='menu_button'>
+                <Link to='/home'>
+                <button className='menu_button' onClick={handleLogOut}>
                 <div className="menu_option">
                 <svg className='menu_svg'  width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="30" height="30" transform="translate(0.690384 0.250763)"/>
                     <path d="M15.6902 17.7015C18.8487 17.7015 21.4091 15.1411 21.4091 11.9826C21.4091 8.8241 18.8487 6.26364 15.6902 6.26364C12.5317 6.26364 9.97125 8.8241 9.97125 11.9826C9.97125 15.1411 12.5317 17.7015 15.6902 17.7015Z" stroke="#C7C7C7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M12.5938 17.4706L11.6052 24.9134L15.6902 22.4625L19.7751 24.9134L18.7866 17.4625" stroke="#C7C7C7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                    <p>Metas</p>
+                    <p>Cerrar Sesión</p>
                 </div>
             </button>
                 </Link>
