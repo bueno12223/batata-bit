@@ -21,7 +21,7 @@ function logIn(props) {
     
       const handleSubmit = event => {
         event.preventDefault();
-        props.loginUser(form, '/');
+        props.loginUser(form, '/home');
       }
     return (
           <section className='login-container'>
@@ -36,14 +36,6 @@ function logIn(props) {
              <div className="login_labelRemember">
                  <input type="checkbox" name="" id=""/>
                  <p>Recordar inicio de sesión</p>
-             </div>
-             <div className="login_auth0">
-             <img src="https://img.icons8.com/fluent/48/000000/google-logo.png"/>
-                 <p>Iniciar sesión con Google</p>
-             </div>
-             <div className="login_auth0">
-             <img src="https://img.icons8.com/color/48/000000/facebook.png"/>
-                 <p>Iniciar sesión con facebook</p>
              </div>
          </form>
      </article>

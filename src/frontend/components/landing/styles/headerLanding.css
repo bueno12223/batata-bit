@@ -5,7 +5,7 @@
     height: 50px;
     align-items: center;
 }
-.header a {
+.header--menu-title{
     color: var(--just-white);
     font-size: 1.4em;
     padding-left: 5px;
@@ -20,15 +20,10 @@
 }
 
 .header-user{
-    font-size: 1.3em;
+    color: var(--grey);
+    font-size: 1.4em;
+    padding-left: 5px;
+    text-decoration: none;
     margin-right: 10px;
-    background-color: var(--bitcoin-orange);
-    border-radius: 5px;
-    height: 30px;
-    width: fit-content;
-    padding-top: 4px;
-    padding-right: 3px;
-}
-.header-user:hover{
-    background-color: var(--soft-orange);
+
 }

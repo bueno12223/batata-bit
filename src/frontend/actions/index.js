@@ -21,10 +21,10 @@ export const registerUser = (payload, redirectUrl) => async (dispatch) => {
 
     export const loginUser = (payload, redirectUrl) => async (dispatch) => {
       try {
-        console.log(payload)
-         const data=  await axios.post('/auth/sign-in', payload);
-         dispatch(registerRequest(data.data.user));
-          // window.location.href = redirectUrl;
+        const data=  await axios.post('/auth/sign-in', payload);
+        dispatch(registerRequest(data.data.user));
+        document.cookie = `email=${payload.email}`;
+        window.location.href = redirectUrl;
       } catch (error) {
           console.log(error);
       }

@@ -70,8 +70,15 @@ const setResponse = (html, preloadedState) => {
   `);
 };
 
-const renderApp = (req, res) => {
-  const store = createStore(reducer, initialState);
+const renderApp = async (req, res) => {
+  let InitalState = initialState
+  const { email } = req.cookies;
+  console.log(email);
+  if(email){
+    const user = await axios.post(`${process.env.API_URL}/api/log-in`,{'email': email});
+    InitalState = user.data.user;
+  }
+  const store = createStore(reducer, InitalState);
   const preloadedState = store.getState();
   const html = renderToString(
     <Provider store={store}>

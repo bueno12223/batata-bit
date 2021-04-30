@@ -3,7 +3,8 @@ import './styles/home.css';
 
 import Navbar from '../components/home/navbar';
 import Header from '../components/home/header';
-const Home = (props) => {
+import Cards from '../components/home/cards'
+const Home = () => {
         const [activate, setActivation] = useState(0);
         const handleActivate = () => {
             setActivation(activate + 1)
@@ -17,7 +18,7 @@ const Home = (props) => {
         <Header handleNavbarActivation={() => handleActivate()}></Header>
         </div>
         <div className="cards_container">
-        {props.children}
+            <Cards></Cards>
         </div>
         </div>
 
