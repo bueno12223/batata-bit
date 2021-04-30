@@ -56,6 +56,8 @@ const setResponse = (html, preloadedState) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="assets/app.css" type="text/css">
       <title>Platzi Video</title>
+      <script src="https://kit.fontawesome.com/4aeb7d5cfb.js" crossorigin="anonymous"></script>
+
     </head>
     <body>
       <div id="app">${html}</div>
@@ -82,36 +84,46 @@ const renderApp = (req, res) => {
   res.send(setResponse(html, preloadedState));
 };
 
-
-
-app.post("/auth/sign-up", async function (req, res, next) {
-  const { body: user } = req;
-
+app.post("/auth/sign-in", async (req, res, next) => {
+  const { email, password } = req.body
   try {
-    const userData = await axios({
-      url: `${process.env.API_URL}/api/auth/sign-up`,
+      const user = await axios.post(`${process.env.API_URL}/api/log-in`,{'email': email});
+      res.status(201).json({'user': user.data.user});
+    } catch (error) {
+    next(error);
+    console.log(error)
+  }
+});
+
+app.post("/auth/sign-up", async (req, res, next) => {
+  const { email, userId, fullName, password } = req.body;
+  try {
+      await axios({
+      url: `${process.env.API_URL}/api`,
       method: "post",
       data: {
-        'email': user.email,
-        'name': user.name,
-        'passowrd': user.passowrd
+        'email': email,
+        'userId': userId,
+        'fullName': fullName,
+        'password': password
       }
     });
-
     res.status(201).json({
       name: req.body.name,
       email: req.body.email,
-      id: userData.data.id
+      id: req.body.id
     });
   } catch (error) {
     next(error);
+    console.log(error)
   }
 });
 
 app.get('*', renderApp);
 
 app.listen(PORT, (err) => {
-    if (err) {console.log(err)
+    if (err) {
+      console.log(err)
     }else{console.log('Server running on port 3000')
     };
   });

@@ -14,7 +14,7 @@ function headerLanding(props) {
                     <h2 className='header--menu-title'>BatataBit</h2>
                 </Link>
             </section>
-                <Link to={props.userAcconut.email ? '/home' : '/sing-up'} className='header-user'>{props.userAcconut.email ? 'Home' : 'Iniciar Sesión' }</Link>
+                <Link to={props.userAcconut.email ? '/home' : '/log-in'} className='header-user'>{props.userAcconut.email ? 'Home' : 'Iniciar Sesión' }</Link>
         </header>
     )
 }

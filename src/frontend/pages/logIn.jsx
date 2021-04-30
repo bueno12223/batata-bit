@@ -9,8 +9,7 @@ import './styles/logIn.css';
 function logIn(props) {
     const [form, setValues] = useState({
         email: '',
-        id: '',
-        name: '',
+        password: '',
       });
 
       const updateInput = event => {
@@ -29,9 +28,9 @@ function logIn(props) {
           <article className='border border_logIn' >
          
          <h2>Iniciar sesión</h2>
-         <form className='login_label' >
-             <input className='login_labelForm' placeholder='correo' onChange={updateInput} type="email" name="" id="" required/>
-             <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type="password" name="" id="" required/>
+         <form className='login_label' onSubmit={handleSubmit} >
+             <input className='login_labelForm' placeholder='correo' onChange={updateInput} type="email" name="email" id="" required/>
+             <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type="password" name="password" id="" required/>
              <input className='login_labelSubmit' type="submit" value="Registrarse" required/>
              <Link to='/' className="login_labelRemember ">¿Olvidaste la contraseña?</Link>
              <div className="login_labelRemember">

@@ -11,8 +11,8 @@ import './styles/logIn.css';
 function singUp(props) {
     const [form, setValues] = useState({
         email: '',
-        id: '',
-        name: '',
+        userId: '',
+        fullName: '',
         password: '',
       });
 
@@ -25,7 +25,7 @@ function singUp(props) {
     
       const handleSubmit = event => {
         event.preventDefault();
-        props.registerUser(form, '/login');
+        props.registerUser(form, '/log-in');
       }
     
     return (
@@ -33,10 +33,10 @@ function singUp(props) {
           <article className='border border_logIn'>
             <h2>Crear cuenta</h2>
             <form className='login_label' onSubmit={handleSubmit}>
-                <input className='login_labelForm' onChange={updateInput} placeholder='nombre y apellido' type="text" name="" id="" required/>
-                <input className='login_labelForm' onChange={updateInput} placeholder='usuario' type="text" name="" id="" required/>
-                <input className='login_labelForm' onChange={updateInput} placeholder='correo' type="email" name="" id="" required/>
-                <input className='login_labelForm' onChange={updateInput} placeholder='contraseña' type="password" name="" id="" required/>
+                <input className='login_labelForm' onChange={(e) => updateInput(e)} placeholder='nombre y apellido' type="text" name="fullName" id="" required/>
+                <input className='login_labelForm' onChange={(e) => updateInput(e)} placeholder='usuario' type="text" name="userId" id="" required/>
+                <input className='login_labelForm' onChange={(e) => updateInput(e)} placeholder='correo' type="email" name="email" id="" required/>
+                <input className='login_labelForm' onChange={(e) => updateInput(e)} placeholder='contraseña' type="password" name="password" id="" required/>
                 <div className="login_labelRemember">
                     <input type="checkbox" name="" id=""/>
                     <p>Aceto los términos y condiciones</p>

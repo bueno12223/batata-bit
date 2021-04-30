@@ -1,5 +1,8 @@
 const initialState = {
-    userAcconut: {userId: 'bueno122', email: 'berriojesus122@gmail.com'},
+    update: null,
+    __v1: null,
+    _id: null,
+    userAcconut: {userId: undefined, email: undefined},
     userPersonalData: {
         visa: {
         },
