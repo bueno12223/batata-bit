@@ -7,6 +7,7 @@ import Landing from '../pages/landing';
 import LogIn from '../pages/logIn'
 import SingUp from '../pages/singUp';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
 
 const App = (props) => (

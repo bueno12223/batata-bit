@@ -55,7 +55,7 @@ const setResponse = (html, preloadedState) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="assets/app.css" type="text/css">
-      <title>Platzi Video</title>
+      <title>batataBit</title>
       <script src="https://kit.fontawesome.com/4aeb7d5cfb.js" crossorigin="anonymous"></script>
 
     </head>
@@ -71,11 +71,12 @@ const setResponse = (html, preloadedState) => {
 };
 
 const renderApp = async (req, res) => {
-  let InitalState = initialState
+  let InitalState = initialState;
+  InitalState.error = false;
   const { email } = req.cookies;
   let isLogged = false
   if(email){
-    const user = await axios.post(`${process.env.API_URL}/api/log-in`,{'email': email});
+    const user = await axios.post(`${process.env.API_URL}/user/log-in`,{'email': email});
     InitalState = user.data.user;
     isLogged = true
   }
@@ -94,9 +95,9 @@ const renderApp = async (req, res) => {
 };
 
 app.post("/auth/sign-in", async (req, res, next) => {
-  const { email, password } = req.body
+  const { email, password } = req.body;
   try {
-      const user = await axios.post(`${process.env.API_URL}/api/log-in`,{'email': email});
+      const user = await axios.post(`${process.env.API_URL}/user/log-in`,{'email': email});
       res.status(201).json({'user': user.data.user});
     } catch (error) {
     next(error);
@@ -108,7 +109,7 @@ app.post("/auth/sign-up", async (req, res, next) => {
   const { email, userId, fullName, password } = req.body;
   try {
       await axios({
-      url: `${process.env.API_URL}/api`,
+      url: `${process.env.API_URL}/user/sing-up`,
       method: "post",
       data: {
         'email': email,
@@ -124,7 +125,7 @@ app.post("/auth/sign-up", async (req, res, next) => {
     });
   } catch (error) {
     next(error);
-    console.log(error)
+    console.log(error);
   }
 });
 
@@ -132,7 +133,7 @@ app.get('*', renderApp);
 
 app.listen(PORT, (err) => {
     if (err) {
-      console.log(err)
-    }else{console.log('Server running on port 3000')
+      console.log(err);
+    }else{console.log('Server running on port 3000');
     };
   });

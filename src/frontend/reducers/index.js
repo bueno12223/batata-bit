@@ -22,13 +22,20 @@ const reducer = (state, action) =>{
 			},
 			
 		}
-		case 'LOGIN_REQUEST':
 		case 'REGISTER_REQUEST':
-		case 'LOGOUT_REQUEST':
-			console.log(action.payload);
-			  return {
+			return {
 				...action.payload
 			  }
+		case 'LOGIN_ERROR':
+			return {
+				...state,
+				error: true
+			}
+		case 'CLOSE_LOGIN_ERROR':
+			return {
+				...state,
+				error: false
+			}
 		default:
 			return state;
 			 

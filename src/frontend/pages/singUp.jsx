@@ -30,7 +30,7 @@ function singUp(props) {
     
     return (
       <section className='login-container'>
-          <article className='border border_logIn'>
+          <article className='border_logIn'>
             <h2>Crear cuenta</h2>
             <form className='login_label' onSubmit={handleSubmit}>
                 <input className='login_labelForm' onChange={(e) => updateInput(e)} placeholder='nombre y apellido' type="text" name="fullName" id="" required/>

@@ -9,7 +9,6 @@
 
 html{
     font-size: 62.5%;
-    font-family: 'Open Sans', sans-serif;
 }
 
 :root {
@@ -28,6 +27,7 @@ html{
 }
 body{
     background-color: var(--off-white) ;
+    font-family: 'Open Sans', sans-serif !important;
 }
 button{
     border: none;
