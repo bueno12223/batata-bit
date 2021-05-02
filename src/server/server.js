@@ -76,25 +76,25 @@ const renderApp = async (req, res) => {
   const cookieValues =  Object.values(req.cookies);
   const { email } = req.cookies;
 
-  if(email){
-    try{
-      const user = await axios({
-        url: `${process.env.API_URL}/user`,
-        data: {'email': email}, 
-        method: 'POST',
-        headers: {'Cookie': `connect.sid=${cookieValues[1]}`},
-        withCredentials: true,
-      });
-      const userData = user.data.user;
-      InitalState = {userData, error: false };
-      isLogged = true;
-    }catch(e){
-      const userData = initialState;
-      InitalState = {userData, error: true};
-      isLogged = false;
-    }
+  
+  try{
+    const user = await axios({
+    url: `${process.env.API_URL}/user`,
+    data: {'email': email}, 
+    method: 'POST',
+    headers: {'Cookie': `connect.sid=${cookieValues[1]}`},
+    withCredentials: true,
+    });
+    let userData = user.data.user;
+    userData.error = false;
+    InitalState = userData;
+    isLogged = true;
+  }catch(e){
+    const userData = initialState;
+    userData.error = false;
+    InitalState = userData;
+    isLogged = false;
   }
-
   const store = createStore(reducer, InitalState);
   const preloadedState = store.getState();
   const html = renderToString(

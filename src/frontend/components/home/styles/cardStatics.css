@@ -44,7 +44,12 @@
     border-radius: 5px;
     height: 10%;
     margin-right: 10px;
+    background-color:var(--soft-orange);
+    color:  var(--bitcoin-orange) ;
 
+}
+.statics_barIcon > i {
+    font-size: 2.1em;
 }
 /* color changer svg */
 #one{

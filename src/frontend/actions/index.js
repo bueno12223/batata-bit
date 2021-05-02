@@ -28,19 +28,24 @@ export const registerUser = (payload, redirectUrl) => async (dispatch) => {
     }
     };
 
-    export const loginUser = (payload, redirectUrl) => async (dispatch) => {
-        try {
-          const data =  await axios.post('/auth/sign-in', payload);
-          console.log(data.status);
-          dispatch(registerRequest(data.data.user));
-          let date = new Date(Date.now() + 86400e3);
-          document.cookie = `email=${payload.email}; expires=${date}; secure`;
-          window.location.href = redirectUrl;
-        } catch (e) {
-            console.log('aqui?');
-            dispatch(logInError(true));
-  
-        }
-        };
+export const loginUser = (payload, redirectUrl) => async (dispatch) => {
+    try {
+        let date = new Date(Date.now() + 86400e3);
+        document.cookie = `email=${payload.email}; expires=${date}; secure`;
+        const data =  await axios.post('/auth/sign-in', payload);
+        dispatch(registerRequest(data.data.user));
+        window.location.href = redirectUrl;
+    } catch (e) {
+        dispatch(logInError(true));
+
+    }
+};
+export const logOutUser = (payload, redirectUrl) => async (dispatch) => {
+    document.cookie = `email=`;
+    document.cookie = `connect.sid=`;
+    dispatch(CloseLogInError(true));
+    window.location.href = redirectUrl;
+
+    };
 
       

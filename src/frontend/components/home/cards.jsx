@@ -1,18 +1,23 @@
 import React from 'react';
 
+// left components
 import CardVisa from './cardVisa.jsx';
 import CardHistory from './cardHistory.jsx';
 
+// rigth components
 import CardGoal from './cardGoal.jsx';
 import CardStatics from './cardStatics.jsx';
 import Transactions from './cardTransacions.jsx';
 
+// modals
+import UserConfigModal from './modals/userConfigModal';
 
 import './styles/cards.css';
 
 const Cards = () => {
     return(
     <div className='cards_container'>
+        <UserConfigModal></UserConfigModal>
         <div className="cards_leftContainer">
             <div className="card card_LeftOverview"><CardVisa></CardVisa></div>
             <div className="card card_LeftHistory"><CardHistory></CardHistory></div>

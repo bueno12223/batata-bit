@@ -34,7 +34,9 @@
     cursor: pointer;
 }
 .header_userAvatar{
-    width: 50px;
+    width: 40px;
+    border-radius: 20px;
+    margin: 0 10px;
     
 }
 .header_TextOptions{

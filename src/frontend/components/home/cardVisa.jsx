@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import './styles/cardVisa.css';
 
 const CardVisa = (props) =>{ 
-    const {userPersonalData: {visa }} = props;
-    
+    const {userPersonalData:{visa, money} } = props;
     return(
     <React.Fragment>
         <h3 className="overview_title">Tarjetas</h3>
@@ -13,16 +12,16 @@ const CardVisa = (props) =>{
                     <p className='overview_visaName'>batata-card</p>
                     <p className='overview_visaType'>Planinum</p>
 
-                    <p className="overview_visaNumbers">{visa.numbers ||"Aun no tienes una batata-card :/"}</p>
+                    <p className="overview_visaNumbers">{visa.numbers}</p>
                     <div className="overview_visaContainer">
-                    <p className="overview_visaUser">{visa.name || "Aplica a una aquí"}</p>
+                    <p className="overview_visaUser">{visa.pin}</p>
                     <p className="overview_visaDate">{visa.date}</p>
                     </div>
                     
                 </div>
                 <div className="overview_balance">
                     <div className="">
-                        <h2 className='overview_balanceMain'>{visa.ammount || "0.00"}$</h2>
+                        <h2 className='overview_balanceMain'>{money.total || "0.00"}$</h2>
                         <p className='overview_balancedescrip'>Balance actual</p>
                     </div>
                     <div className="">
@@ -45,7 +44,8 @@ const CardVisa = (props) =>{
 const mapStateToProps = state => {
     return{
         userPersonalData: {
-            visa: state.userPersonalData.visa
+            visa: state.userPersonalData.visa,
+            money: state.userPersonalData.money
         }
     }
 }

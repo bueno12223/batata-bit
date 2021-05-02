@@ -1,0 +1,8 @@
+.config-container{
+    top: 35%;
+    position: fixed;
+    background-color: var(--just-white);
+    max-width: 450px;
+    left: auto;
+    margin: auto;
+}

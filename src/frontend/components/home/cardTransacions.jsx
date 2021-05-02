@@ -1,21 +1,11 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import Gravatar from '../general/gravatar';
-
-import {doTransaccion} from '../../actions';
 import plus from '../../images/friends/plus.svg';
 import './styles/cardTransactions.css';
 function cardTransacions(props) {
     const {userPersonalData: {userFriends} } = props;
-    const add = {name: 'añadir nuevo', email: null}
-
-    const [transacctionData, setTransaccionData] = useState({to: null, ammount: null })
-    const handleDoTransaccion = (data) => {
-        if(data.to !== undefined && data.ammount !== 0 && data.ammount){
-            props.doTransaccion(data);
-        }else{alert('Por favor llene los datos')}
-    };
-
+    const add = {fullName: 'añadir nuevo', email: null}
     return (
         <React.Fragment>
             <h3 className="transaction_title">Nueva Transacción</h3>
@@ -25,17 +15,17 @@ function cardTransacions(props) {
             </div>
             <div className="transacions_input">
                 <div className="transacions_inputTextContainer">
-                    <input onChange={e => setTransaccionData({...transacctionData, ammount: e.target.value })} className="transacions_inputText" placeholder='0'  type="number"/>
+                    <input className="transacions_inputText" placeholder='0'  type="number"/>
                     <p className='transacions_inputDolar'>$</p>
                 </div>
-                <button onClick={() => handleDoTransaccion(transacctionData)} className="transacions_inputButton">Enviar</button>
+                <button  className="transacions_inputButton">Enviar</button>
             </div>
 
         </React.Fragment>
     )
 }
 
-function FriendTransacions({name, email, setToTransaccion}) {
+function FriendTransacions({fullName, email, setToTransaccion}) {
     return (
         <div className='transacions_friensItem' onClick={() => setToTransaccion(name)}>
             {email
@@ -43,7 +33,7 @@ function FriendTransacions({name, email, setToTransaccion}) {
             : <img className='transacions_friensAvatar transacions_friensAdd' src={plus} alt="Añadir amigo"/>
         }
             
-            <p className='transacions_friensName'>{name}</p>
+            <p className='transacions_friensName'>{fullName}</p>
         </div>
     )
 }
@@ -54,7 +44,4 @@ const mapDispachToProps = state => {
         }
     }
 }
-const mapStateToProps = {
-    doTransaccion
-}
-export default connect(mapDispachToProps, mapStateToProps)(cardTransacions);
+export default connect(mapDispachToProps, null)(cardTransacions);

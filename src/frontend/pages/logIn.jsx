@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loginUser, CloseLogInError } from "../actions";
-import { Alert, Fade } from 'react-bootstrap';
 
 import './styles/home.css';
 import './styles/logIn.css';
@@ -29,7 +28,6 @@ function logIn(props) {
           <section className='login-container'>
           <article className='border_logIn' >
             <div className="login-unauthorize">
-              <Alert onClose={() => props.CloseLogInError()}  variant='danger' dismissible transition={Fade} show={props.loginError}>Usuario o contraseña incorrectos</Alert>
             </div>
          <h2>Iniciar sesión</h2>
          <form className='login_label' onSubmit={handleSubmit} >
@@ -56,10 +54,10 @@ const mapDispatchToProps = {
     loginUser: PropTypes.func,
   };
 
-const mapStateToProps = state => {
-  return {
-    loginError: state.error
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     loginError: state.error
+//   }
+// }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(logIn);
+  export default connect(null, mapDispatchToProps)(logIn);
