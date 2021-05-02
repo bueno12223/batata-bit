@@ -24,6 +24,7 @@ function logIn(props) {
         event.preventDefault();
         props.loginUser(form, '/home');
       }
+      console.log(props.loginError);
     return (
           <section className='login-container'>
           <article className='border_logIn' >

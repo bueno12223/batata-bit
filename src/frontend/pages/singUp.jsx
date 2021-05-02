@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { registerUser } from "../actions";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Alert, Fade } from 'react-bootstrap';
+import { loginUser, CloseLogInError } from "../actions";
 
 
 import './styles/home.css';
@@ -31,6 +33,9 @@ function singUp(props) {
     return (
       <section className='login-container'>
           <article className='border_logIn'>
+            <div className="login-unauthorize">
+            <Alert onClose={() => props.CloseLogInError()}  variant='danger' dismissible transition={Fade} show={props.loginError}>Este usuario ya existe</Alert>
+            </div>
             <h2>Crear cuenta</h2>
             <form className='login_label' onSubmit={handleSubmit}>
                 <input className='login_labelForm' onChange={(e) => updateInput(e)} placeholder='nombre y apellido' type="text" name="fullName" id="" required/>
@@ -52,10 +57,15 @@ function singUp(props) {
 }
 const mapDispatchToProps = {
     registerUser,
+    CloseLogInError
   };
   
   singUp.propTypes = {
     registerUser: PropTypes.func,
   };
-
-  export default connect(null, mapDispatchToProps)(singUp);
+const mapStateToProps = state => {
+  return {
+    loginError: state.error
+  }
+}
+  export default connect(mapStateToProps, mapDispatchToProps)(singUp);

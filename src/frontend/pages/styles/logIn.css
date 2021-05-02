@@ -19,12 +19,15 @@
     border: none;
     color: var(--just-white);
 }
-.border_logIn > h2{
-    font-size: 2.1em;
+.border_logIn >  div{
+    font-size: 1.3em;
 }
 .login-unauthorize{
-    width: 207px;
+    width: 261px;
     height: 44px;
+}
+.login-unauthorize button {
+    font-size: 1.3em;
 }
 .login_label{
     display: flex;

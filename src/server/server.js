@@ -71,16 +71,30 @@ const setResponse = (html, preloadedState) => {
 };
 
 const renderApp = async (req, res) => {
-  let InitalState = initialState;
-  InitalState.error = false;
+  let InitalState;
+  let isLogged;
+  const cookieValues =  Object.values(req.cookies);
   const { email } = req.cookies;
-  let isLogged = false
+
   if(email){
-    const user = await axios.post(`${process.env.API_URL}/user/log-in`,{'email': email});
-    InitalState = user.data.user;
-    isLogged = true
+    try{
+      const user = await axios({
+        url: `${process.env.API_URL}/user`,
+        data: {'email': email}, 
+        method: 'POST',
+        headers: {'Cookie': `connect.sid=${cookieValues[1]}`},
+        withCredentials: true,
+      });
+      const userData = user.data.user;
+      InitalState = {userData, error: false };
+      isLogged = true;
+    }catch(e){
+      const userData = initialState;
+      InitalState = {userData, error: true};
+      isLogged = false;
+    }
   }
-  
+
   const store = createStore(reducer, InitalState);
   const preloadedState = store.getState();
   const html = renderToString(
@@ -93,15 +107,23 @@ const renderApp = async (req, res) => {
 
   res.send(setResponse(html, preloadedState));
 };
-
 app.post("/auth/sign-in", async (req, res, next) => {
   const { email, password } = req.body;
   try {
-      const user = await axios.post(`${process.env.API_URL}/user/log-in`,{'email': email});
-      res.status(201).json({'user': user.data.user});
+      const user = await axios({
+        url: `${process.env.API_URL}/user/log-in`,
+        data: {'email': email},
+        method: 'POST',
+        withCredentials: true,
+        auth: {
+          username: email,
+          password: password,
+        },
+      });
+      res.status(201).header(user.headers).json({'user': user.data.user});
     } catch (error) {
     next(error);
-    console.log(error)
+    console.log(error);
   }
 });
 
