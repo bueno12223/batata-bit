@@ -1,8 +1,45 @@
-.config-container{
-    top: 35%;
-    position: fixed;
-    background-color: var(--just-white);
-    max-width: 450px;
-    left: auto;
-    margin: auto;
+.userModal-conatiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userModal-input{
+    border: 1px solid var(--grey) ;
+    color: var(--grey);
+    outline: none;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    height: 30px;
+    width: 80%;
+    font-size: 1em;
+}
+.userModal-conatiner  p {
+    font-size: 1.4em;
+    color: var(--warm-black);
+    align-self: end;
+    margin-left: 11%;
+}
+.userModal-input::placeholder{
+    padding-left: 5px;
+}
+.userModal-submit{
+    background-color: var(--secondary-blue);
+    border: 1px solid var(--secondary-blue);
+    color: var(--just-white);
+    cursor: pointer;
+}
+.userModal-close{
+    text-align: end;
+}
+.userModal-close > i {
+    font-size: 1.8em;
+    margin-right: 10px;
+    color: var(--danger-red);
+    padding: 5px;
+    background-color: var(--warm-red);
+    cursor: pointer;
+    padding: 1px 4px;
+    margin-top: 3px;
+    border-radius: 4px;
 }

@@ -25,6 +25,8 @@ html{
 --grey: #bababa;
 --off-white:  #F0F0F0;
 --just-white: #ffffff; 
+--danger-red: #da3535;
+--warm-red: #e29494;
 }
 body{
     background-color: var(--off-white) ;

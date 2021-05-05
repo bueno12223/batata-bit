@@ -1,5 +1,7 @@
+/* eslint-disable global-require */
 import express from 'express';
 import dotenv from 'dotenv';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import webpack from 'webpack';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -7,14 +9,14 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
-import serverRoutes from '../frontend/routers/serverRoutes';
-import reducer from '../frontend/reducers/index';
-import initialState from '../frontend/initalState';
 import helmet from 'helmet';
 
 import cookieParser from 'cookie-parser';
 import passport from 'passport';
 import axios from 'axios';
+import initialState from '../frontend/initalState';
+import reducer from '../frontend/reducers/index';
+import serverRoutes from '../frontend/routers/serverRoutes';
 
 dotenv.config();
 const { ENV, PORT } = process.env;
@@ -28,7 +30,7 @@ app.use(passport.session());
 
 // basic strategy
 
-if (ENV  === 'development') {
+if (ENV === 'development') {
   console.log('Development config');
   const webpackConfig = require('../../webpack.config');
   const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -40,10 +42,10 @@ if (ENV  === 'development') {
   app.use(webpackDevMiddleware(compiler, serverConfig));
   app.use(webpackHotMiddleware(compiler));
 
-}else{
-	app.use(express.static('../public'));
-	app.use(helmet());
-	app.use(helmet.permiteCrossDomainPolices());
+} else {
+  app.use(express.static('../public'));
+  app.use(helmet());
+  app.use(helmet.permiteCrossDomainPolices());
   app.set('x-powered-by', false);
 }
 
@@ -73,25 +75,34 @@ const setResponse = (html, preloadedState) => {
 const renderApp = async (req, res) => {
   let InitalState;
   let isLogged;
-  const cookieValues =  Object.values(req.cookies);
+  const cookieValues = Object.values(req.cookies);
   const { email } = req.cookies;
 
-  
-  try{
+  try {
     const user = await axios({
-    url: `${process.env.API_URL}/user`,
-    data: {'email': email}, 
-    method: 'POST',
-    headers: {'Cookie': `connect.sid=${cookieValues[1]}`},
-    withCredentials: true,
+      url: `${process.env.API_URL}/user`,
+      data: { 'email': email },
+      method: 'POST',
+      headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
+      withCredentials: true,
     });
-    let userData = user.data.user;
+    const userData = user.data.user;
     userData.error = false;
+    userData.modals = {
+      config: false,
+      transacctions: false,
+      goals: false,
+    };
     InitalState = userData;
     isLogged = true;
-  }catch(e){
+  } catch (e) {
     const userData = initialState;
     userData.error = false;
+    userData.modals = {
+      config: false,
+      transacctions: false,
+      goals: false,
+    };
     InitalState = userData;
     isLogged = false;
   }
@@ -107,43 +118,43 @@ const renderApp = async (req, res) => {
 
   res.send(setResponse(html, preloadedState));
 };
-app.post("/auth/sign-in", async (req, res, next) => {
+app.post('/auth/sign-in', async (req, res, next) => {
   const { email, password } = req.body;
   try {
-      const user = await axios({
-        url: `${process.env.API_URL}/user/log-in`,
-        data: {'email': email},
-        method: 'POST',
-        withCredentials: true,
-        auth: {
-          username: email,
-          password: password,
-        },
-      });
-      res.status(201).header(user.headers).json({'user': user.data.user});
-    } catch (error) {
+    const user = await axios({
+      url: `${process.env.API_URL}/user/log-in`,
+      data: { 'email': email },
+      method: 'POST',
+      withCredentials: true,
+      auth: {
+        username: email,
+        password,
+      },
+    });
+    res.status(201).header(user.headers).json({ 'user': user.data.user });
+  } catch (error) {
     next(error);
     console.log(error);
   }
 });
 
-app.post("/auth/sign-up", async (req, res, next) => {
+app.post('/auth/sign-up', async (req, res, next) => {
   const { email, userId, fullName, password } = req.body;
   try {
-      await axios({
+    await axios({
       url: `${process.env.API_URL}/user/sing-up`,
-      method: "post",
+      method: 'post',
       data: {
         'email': email,
         'userId': userId,
         'fullName': fullName,
-        'password': password
-      }
+        'password': password,
+      },
     });
     res.status(201).json({
       name: req.body.name,
       email: req.body.email,
-      id: req.body.id
+      id: req.body.id,
     });
   } catch (error) {
     next(error);
@@ -154,8 +165,9 @@ app.post("/auth/sign-up", async (req, res, next) => {
 app.get('*', renderApp);
 
 app.listen(PORT, (err) => {
-    if (err) {
-      console.log(err);
-    }else{console.log('Server running on port 3000');
-    };
-  });
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Server running on port 3000');
+  };
+});
