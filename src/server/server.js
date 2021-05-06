@@ -160,6 +160,23 @@ app.post('/auth/sign-up', async (req, res, next) => {
   }
 });
 
+app.put('/auth/config-user', async (req, res, next) => {
+  const { userId, fullName, email, password, id } = req.body;
+  const cookieValues = Object.values(req.cookies);
+  try {
+    const response = await axios({
+      url: `${process.env.API_URL}/user/${id}`,
+      data: { 'userId': userId, 'fullName': fullName, 'email': email, 'password': password },
+      method: 'PUT',
+      headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
+      withCredentials: true,
+    });
+    res.status(response.status).json({ 'body': response.body });
+  } catch (e) {
+    console.log(e);
+  }
+});
+
 app.get('*', renderApp);
 
 app.listen(PORT, (err) => {

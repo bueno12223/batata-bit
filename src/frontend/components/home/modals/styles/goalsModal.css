@@ -1,0 +1,30 @@
+.userModal-iconList{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 7px;
+    width: 80%;
+    height: 40px;
+    margin:  12px 0;
+    margin-bottom: 17px;
+}
+.userModal-iconList li {
+    list-style-type: none;
+    height: 26px;
+    width: 34px;
+
+}
+.userModal-iconItemSpan {
+    padding: 6px;
+    padding-top: 10px;
+    height: 2.5em;
+    width: 2.5em;
+    cursor: pointer;
+}
+.userModal-iconItemSpan:focus{
+    background-color: black;
+}

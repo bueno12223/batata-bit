@@ -43,3 +43,27 @@ export const logOutUser = (payload, redirectUrl) => async (dispatch) => {
 
 };
 
+export const configUser = (payload, redirectUrl) => async (dispatch) => {
+  try {
+    const data = await axios.put('/auth/config-user', payload);
+    if (data.status === 200) {
+      window.location.href = redirectUrl;
+    }
+  } catch (e) {
+    console.log(e);
+
+  }
+};
+// save goal
+export const saveGoal = (payload, redirectUrl) => async (dispatch) => {
+  try {
+    const data = await axios.put('/goal', payload);
+    if (data.status === 200) {
+      window.location.href = redirectUrl;
+    }
+  } catch (e) {
+    console.log(e);
+
+  }
+};
+
