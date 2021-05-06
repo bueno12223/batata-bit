@@ -77,6 +77,12 @@ const renderApp = async (req, res) => {
   let isLogged;
   const cookieValues = Object.values(req.cookies);
   const { email } = req.cookies;
+  const modalConfig = {
+    config: false,
+    goals: false,
+    depositGoal: false,
+    deposit: false,
+  };
 
   try {
     const user = await axios({
@@ -88,22 +94,13 @@ const renderApp = async (req, res) => {
     });
     const userData = user.data.user;
     userData.error = false;
-    userData.modals = {
-      config: false,
-      transacctions: false,
-      goals: false,
-    };
+    userData.modals = modalConfig;
     InitalState = userData;
     isLogged = true;
   } catch (e) {
     const userData = initialState;
     userData.error = false;
-    userData.modals = {
-      config: false,
-      transacctions: false,
-      goals: false,
-      deposit: false,
-    };
+    userData.modals = modalConfig;
     InitalState = userData;
     isLogged = false;
   }

@@ -1,7 +1,6 @@
-/* header text */
+/* header text description */
 .header_text{
     margin-left: 10px;
-
 }
 .header_Text{
     display: none;
@@ -10,28 +9,20 @@
     font-weight: 800;
     font-size: 2.5em;
 }
-/* header user icons an the other idk */
+/*headers user conatiner */
 .header_user{
     display: flex;
     align-items: center;
-
-
 }
-/* user data info ... */
-.header_userMail, .header_userHamburger{
+/* user data & icons ... */
+.header_userIcon{
     margin-right: 10px;
-}
-.header_userMail:hover > path {
-    fill: #197BBD;
+    font-size: 1.8em;
+    color: var(--grey);
     cursor: pointer;
 }
-.header_userNotification:hover > path {
-    fill: #197BBD;
-    cursor: pointer;
-}
-.header_sideBar:hover > path{
-    stroke: #197BBD;
-    cursor: pointer;
+.header_userIcon:hover{
+    color: var(--home-blue);
 }
 .header_userAvatar{
     width: 40px;
@@ -41,24 +32,23 @@
 }
 .header_TextOptions{
     cursor: pointer;
-    color: #AEAEAE;
+    color: var(--grey);
 }
 .header_TextOptions:hover{
-    color: #197BBD;
+    color: var(--home-blue);
 }
 .header_TextName{
     font-size: 1.2em;
     font-weight: 800;
 }
 
+/* media querys */
 @media (min-width: 430px){
     .header{
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    
-
 }
 @media(min-width: 500px){
     .header_Text{
@@ -66,7 +56,7 @@
     }
 }
 @media(min-width: 770px){
-    .header_userHamburger{
+    .header_activateNavbar{
         display: none;
     }
 }

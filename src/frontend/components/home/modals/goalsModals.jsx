@@ -5,17 +5,14 @@ import './styles/userConfigModal.css';
 
 function goalsModals(props) {
   const { display } = props;
-  console.log(display);
   return (
     <MainModal display={display}>
       <h3>Crear una meta</h3>
       <form className='userModal-conatiner'>
         <p>Nombre de la meta</p>
         <input type='text' className='userModal-input' />
-        <p>¡cuando lo quieres lograr?</p>
+        <p>¿cuando lo quieres lograr?</p>
         <input type='date' className='userModal-input' />
-        <p>¿cuanto deseas guardar?</p>
-        <input type='number' className='userModal-input' />
         <input type='submit' className='userModal-input userModal-submit' />
       </form>
     </MainModal>
