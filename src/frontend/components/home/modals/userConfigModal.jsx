@@ -8,7 +8,7 @@ function userConfigModal(props) {
   const { modals: { config } } = props;
   return (
     <MainModal display={config}>
-      Ajustes de la cuenta
+      <h3>Ajustes de la cuenta</h3>
       <form className='userModal-conatiner'>
         <h5>Si deja un campo vacio este no se modificará</h5>
         <p>{userId}</p>

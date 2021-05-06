@@ -102,6 +102,7 @@ const renderApp = async (req, res) => {
       config: false,
       transacctions: false,
       goals: false,
+      deposit: false,
     };
     InitalState = userData;
     isLogged = false;

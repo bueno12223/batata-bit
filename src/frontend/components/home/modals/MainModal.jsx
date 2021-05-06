@@ -13,13 +13,15 @@ function MainModal(props) {
   }, [display]);
   return (
     <section className='config-container' style={{ display: activate ? 'inline' : 'none' }}>
-      <h3 className='config-header'>{children[0]}</h3>
+      <article className='config-header'>
+        {children[0]}
+        <button type='button' className='userModal-close' onClick={() => displayModal('')}>
+          <i className='fas fa-times' />
+        </button>
+      </article>
       <article className='config-body'>
         {children[1]}
       </article>
-      <button type='button' className='userModal-close' onClick={() => displayModal('')}>
-        <i className='fas fa-times' />
-      </button>
     </section>
   );
 }

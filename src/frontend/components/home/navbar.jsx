@@ -40,18 +40,8 @@ const Navbar = (props) => {
               <p>Transacciones</p>
             </div>
           </button>
-          <button type='button' className='menu_button'>
-            <div className='menu_option'>
-              <svg className='menu_svg' width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                <rect width='30' height='30' transform='translate(0.690384 0.250763)' />
-                <path d='M23.054 8.25076H8.32675C7.42301 8.25076 6.69038 9.03426 6.69038 10.0008V20.5008C6.69038 21.4673 7.42301 22.2508 8.32675 22.2508H23.054C23.9578 22.2508 24.6904 21.4673 24.6904 20.5008V10.0008C24.6904 9.03426 23.9578 8.25076 23.054 8.25076Z' stroke='#C7C7C7' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-                <path d='M6.69038 13.2508H24.6904' stroke='#C7C7C7' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' />
-              </svg>
-              <p>Tarjetas</p>
-            </div>
-          </button>
 
-          <button type='button' className='menu_button'>
+          <button type='button' className='menu_button' onClick={() => { displayModal('deposit'); }}>
             <div className='menu_option'>
               <svg className='menu_svg' width='31' height='31' viewBox='0 0 31 31' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <rect width='30' height='30' transform='translate(0.690384 0.25061)' />

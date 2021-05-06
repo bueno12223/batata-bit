@@ -21,6 +21,7 @@ const reducer = (state, action) => {
           config: action.payload === 'config',
           transacctions: action.payload === 'transacctions',
           goals: action.payload === 'goals',
+          deposit: action.payload === 'deposit',
         },
 
       };

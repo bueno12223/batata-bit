@@ -11,6 +11,8 @@ import Transactions from './cardTransacions';
 
 // modals
 import UserConfigModal from './modals/userConfigModal';
+import DepositModal from './modals/depositModal';
+import GoalsModal from './modals/goalsModals';
 
 import './styles/cards.css';
 
@@ -18,6 +20,8 @@ const Cards = () => {
   return (
     <div className='cards_container'>
       <UserConfigModal />
+      <DepositModal />
+      <GoalsModal />
       <div className='cards_leftContainer'>
         <div className='card card_LeftOverview'><CardVisa /></div>
         <div className='card card_LeftHistory'><CardHistory /></div>
