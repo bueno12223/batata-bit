@@ -1,10 +1,9 @@
 /* bitcon img section */
 .bitcoin-img-container{
     width: 100%;
-
     min-width: 320px;
     height: 70vh;
-    background-image: url(../../../images/landing/bitcoin.jpg);
+    background-image: url('../../../images/landing/bitcoin-S.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -169,5 +168,10 @@ color: var(--just-white);
 }
 #ultimo{
     color: white; 
+}
+@media(min-width: 620px){
+    .bitcoin-img-container{
+        background-image: url('../../../images/landing/bitcoin-G.jpg');
+    }
 }
 

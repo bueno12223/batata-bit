@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loginUser, CloseLogInError } from '../actions';
+import { loginUser } from '../actions';
 
 import './styles/home.css';
 import './styles/logIn.css';
@@ -47,7 +47,6 @@ function logIn(props) {
 }
 const mapDispatchToProps = {
   loginUser,
-  CloseLogInError,
 };
 
 logIn.propTypes = {

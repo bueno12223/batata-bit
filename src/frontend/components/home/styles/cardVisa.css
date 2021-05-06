@@ -10,7 +10,7 @@
     justify-content: space-evenly;
 }
 .overview_visa{
-    background-image: url(../../../images/icons/menu.svg);
+    background-image: url('../../../images/icons/visa.svg');
     color: white;
     width: 80%;
     height: 65%;
