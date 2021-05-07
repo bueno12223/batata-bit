@@ -1,7 +1,7 @@
 
 .login-container{
     background-color: var(--off-blue) !important;
-    background-image: url(https://i.postimg.cc/13m2d0Bx/backgrund.png);
+    background-image: url('../../images/logIn/backgrund.png');
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;

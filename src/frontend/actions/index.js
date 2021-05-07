@@ -58,7 +58,7 @@ export const configUser = (payload, redirectUrl) => async (dispatch) => {
 export const saveGoal = (payload, redirectUrl) => async (dispatch) => {
   try {
     const data = await axios.put('/goal', payload);
-    if (data.status === 200) {
+    if (data.status === 201) {
       window.location.href = redirectUrl;
     }
   } catch (e) {

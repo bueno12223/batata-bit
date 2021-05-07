@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { saveGoal } from '../../../actions';
 import MainModal from './MainModal';
 import './styles/userConfigModal.css';
 import './styles/goalsModal.css';
 
 function goalsModals(props) {
-  const { display } = props;
+  const { display, id, saveGoal } = props;
   const [goal, setGoal] = useState({
     end: '',
     title: '',
     icon: '',
     goal: 0,
+    id,
   });
   const handleChange = (e) => {
     setGoal({
@@ -36,7 +39,7 @@ function goalsModals(props) {
             <option value={icon}>{icon}</option>
           ))}
         </select>
-        <Link to='/home' onClick={() => console.log(goal)} type='submit' className='userModal-input userModal-submit' />
+        <Link to='/home' onClick={() => saveGoal(goal, '/home')} type='submit' className='userModal-input userModal-submit' />
       </form>
     </MainModal>
   );
@@ -44,7 +47,15 @@ function goalsModals(props) {
 const mapStateToProps = (state) => {
   return {
     display: state.modals.goals,
+    id: state._id,
   };
 };
+const mapDispachToProps = {
+  saveGoal,
+};
+goalsModals.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
+  saveGoal: PropTypes.func,
+};
 
-export default connect(mapStateToProps, null)(goalsModals);
+export default connect(mapStateToProps, mapDispachToProps)(goalsModals);

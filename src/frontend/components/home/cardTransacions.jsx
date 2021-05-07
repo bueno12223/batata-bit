@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Gravatar from '../general/gravatar';
-import plus from '../../images/friends/plus.svg';
+import plus from '../../images/icons/plus-B.svg';
 import './styles/cardTransactions.css';
 
 function cardTransacions(props) {
@@ -27,9 +27,9 @@ function cardTransacions(props) {
   );
 }
 
-function FriendTransacions({ fullName, email, setToTransaccion }) {
+function FriendTransacions({ fullName, email }) {
   return (
-    <div className='transacions_friensItem' onClick={() => setToTransaccion(name)}>
+    <div className='transacions_friensItem'>
       {email ?
         <Gravatar className='transacions_friensAvatar' email={email} /> :
         <img className='transacions_friensAvatar transacions_friensAdd' src={plus} alt='Añadir amigo' />}

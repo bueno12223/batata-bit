@@ -20,7 +20,7 @@ const Navbar = (props) => {
       </div>
       <div className='navrbar_menuSideBar'>
         <ul>
-          <button type='button' className='menu_button'>
+          <button type='button' className='menu_button' onClick={() => { displayModal('goals'); }}>
             <div className='menu_option moveIt'>
               <i className='fas fa-trophy menu_button_icon' />
               <p>Metas</p>
