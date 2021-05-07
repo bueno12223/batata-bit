@@ -5,9 +5,7 @@ import './styles/cardStatics.css';
 
 function cardStatics(props) {
   const { userPersonalData: { goals } } = props;
-  console.log(goals.length);
   for (;goals.length <= 3;) {
-    console.log(0);
     goals.push({ title: null, ammount: null, goal: null });
   }
   return (
@@ -28,7 +26,7 @@ const StaticBar = (props) => {
   return (
     <section className='statics_bar'>
       <span className='statics_barIcon'>
-        <i className={`fas fa-${icon || 'sticky-note'}`} />
+        <i aria-hidden className={`fas fa-${icon || 'sticky-note'}`} />
       </span>
       <div className='statics_barProgesiveContainer'>
         <div className='statics_barProgresive'>

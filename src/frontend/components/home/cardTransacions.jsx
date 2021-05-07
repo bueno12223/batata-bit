@@ -12,8 +12,8 @@ function cardTransacions(props) {
     <>
       <h3 className='transaction_title'>Nueva Transacción</h3>
       <div className='transacions_friensContainer'>
-        {userFriends.map((e) => <FriendTransacions setToTransaccion={(e) => setTransaccionData({ ...transacctionData, to: e })} {...e} id={e.id} key={e.id} />)}
-        <FriendTransacions {...add} key={10} />
+        {userFriends.map((e) => <FriendTransacions setToTransaccion={(e) => setTransaccionData({ ...transacctionData, to: e })} {...e} key={e.fullName} />)}
+        <FriendTransacions {...add} key={add.fullName} />
       </div>
       <div className='transacions_input'>
         <div className='transacions_inputTextContainer'>

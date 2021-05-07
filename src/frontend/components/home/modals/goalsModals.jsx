@@ -36,7 +36,7 @@ function goalsModals(props) {
         <p>Icono</p>
         <select name='icon' onChange={(e) => handleChange(e)} required defaultValue='0' className='userModal-input'>
           {icons.map((icon) => (
-            <option value={icon}>{icon}</option>
+            <option key={icon} value={icon}>{icon}</option>
           ))}
         </select>
         <Link to='/home' onClick={() => saveGoal(goal, '/home')} type='submit' className='userModal-input userModal-submit' />

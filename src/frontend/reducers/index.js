@@ -7,7 +7,7 @@ const reducer = (state, action) => {
     case 'LOGIN_ERROR':
       return {
         ...state,
-        error: true,
+        error: action.payload,
       };
     case 'CLOSE_LOGIN_ERROR':
       return {

@@ -16,7 +16,7 @@ function MainModal(props) {
       <article className='config-header'>
         {children[0]}
         <button type='button' className='userModal-close' onClick={() => displayModal('')}>
-          <i className='fas fa-times' />
+          <i aria-hidden className='fas fa-times' />
         </button>
       </article>
       <article className='config-body'>

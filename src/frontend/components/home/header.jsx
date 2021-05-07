@@ -13,10 +13,10 @@ const Header = (props) => {
       </div>
       <div className='header_user'>
         <button className='header_activateNavbar' type='button' onClick={() => props.handleNavbarActivation()}>
-          <i className='fas fa-bars header_userIcon' />
+          <i aria-hidden className='fas fa-bars header_userIcon' />
         </button>
-        <i className='fas fa-inbox header_userIcon' />
-        <i className='fas fa-bell header_userIcon' />
+        <i aria-hidden className='fas fa-inbox header_userIcon' />
+        <i aria-hidden className='fas fa-bell header_userIcon' />
         <Gravatar className='header_userAvatar' email={email} />
         <div className='header:userData'>
           <div className='header_Text'>

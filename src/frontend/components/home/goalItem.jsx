@@ -9,7 +9,7 @@ const CardGoal = ({ ammount, end, title, icon }) => {
         {ammount}
       </h2>
       <p className='goal_date'>{end}</p>
-      <i className={`fas fa-${icon} goal_icon`} />
+      <i aria-hidden className={`fas fa-${icon} goal_icon`} />
       <h2 className='goal_title'>{title}</h2>
     </article>
   );

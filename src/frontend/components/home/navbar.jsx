@@ -22,34 +22,34 @@ const Navbar = (props) => {
         <ul>
           <button type='button' className='menu_button' onClick={() => { displayModal('goals'); }}>
             <div className='menu_option moveIt'>
-              <i className='fas fa-trophy menu_button_icon' />
+              <i aria-hidden className='fas fa-trophy menu_button_icon' />
               <p>Metas</p>
             </div>
           </button>
           <button type='button' className='menu_button'>
             <div className='menu_option'>
-              <i className='fas fa-file-invoice-dollar menu_button_icon' />
+              <i aria-hidden className='fas fa-file-invoice-dollar menu_button_icon' />
               <p>Transacciones</p>
             </div>
           </button>
 
           <button type='button' className='menu_button' onClick={() => { displayModal('deposit'); }}>
             <div className='menu_option'>
-              <i className='fas fa-hand-holding-usd menu_button_icon' />
+              <i aria-hidden className='fas fa-hand-holding-usd menu_button_icon' />
               <p className='navbar-element-changeHover'>Depósitos</p>
             </div>
           </button>
 
           <button type='button' className='menu_button' onClick={() => { displayModal('config'); }}>
             <div className='menu_option'>
-              <i className='fas fa-cog menu_button_icon' />
+              <i aria-hidden className='fas fa-cog menu_button_icon' />
               <p>Ajustes</p>
             </div>
           </button>
 
           <button type='button' className='menu_button' onClick={handleLogOut}>
             <div className='menu_option'>
-              <i className='fas fa-sign-out-alt menu_button_icon' />
+              <i aria-hidden className='fas fa-sign-out-alt menu_button_icon' />
               <p>Cerrar Sesión</p>
             </div>
           </button>
