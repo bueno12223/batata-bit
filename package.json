@@ -18,7 +18,7 @@
     "url": "https://github.com/bueno12223/bueno12223/issues"
   },
   "engines": {
-    "node": "12.16.x"
+    "node": "15.5.0"
   },
   "homepage": "https://github.com/bueno12223/bueno12223#readme",
   "dependencies": {
@@ -31,10 +31,10 @@
     "@babel/register": "^7.13.14",
     "@babel/runtime": "^7.13.10",
     "@hapi/boom": "^9.1.2",
-    "babel-loader": "^8.2.2",
     "asset-require-hook": "^1.2.0",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
     "chalk": "^4.1.0",
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
