@@ -9,26 +9,18 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
-import helmet from 'helmet';
-
-import cookieParser from 'cookie-parser';
-import passport from 'passport';
 import axios from 'axios';
+import cookieParser from 'cookie-parser';
 import initialState from '../frontend/initalState';
 import reducer from '../frontend/reducers/index';
 import serverRoutes from '../frontend/routers/serverRoutes';
+import getManifest from './getManifest';
 
 dotenv.config();
 const { ENV, PORT } = process.env;
 const app = express();
-
-// midlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(passport.initialize());
-app.use(passport.session());
-
-// basic strategy
 
 if (ENV === 'development') {
   console.log('Development config');
@@ -43,30 +35,35 @@ if (ENV === 'development') {
   app.use(webpackHotMiddleware(compiler));
 
 } else {
-  app.use(express.static('../public'));
-  app.use(helmet());
-  app.use(helmet.permiteCrossDomainPolices());
-  app.set('x-powered-by', false);
+  app.use((req, res, next) => {
+    if (!req.hashManifest) req.hashManifest = getManifest();
+    next();
+  });
+  app.use(express.static(`${__dirname}/public`));
 }
 
-const setResponse = (html, preloadedState) => {
+const setResponse = (html, preloadedState, manifest) => {
+  const mainStyles = manifest ? manifest['vendors.css'] : 'assets/app.css';
+  const mainBuild = manifest ? manifest['main.js'] : 'assets/app.js';
+  const vendorBuild = manifest ? manifest['vendors.js'] : 'assets/vendor.js';
+  // const batata = manifest ? manifest['assets/batata.svg'] : 'assets/vendor.js';
   return (`
   <!DOCTYPE html>
   <html>
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="assets/app.css" type="text/css">
       <title>batataBit</title>
-      <script src="https://kit.fontawesome.com/4aeb7d5cfb.js" crossorigin="anonymous"></script>
-
+      <script src="https://kit.fontawesome.com/4aeb7d5cfb.js" crossorigin="anonymous"></script>    
+      <link rel="stylesheet" href='${mainStyles}' type="text/css">
     </head>
     <body>
       <div id="app">${html}</div>
       <script>
         window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
       </script>
-      <script src="assets/app.js" type="text/javascript"></script>
+      <script src='${mainBuild}' type="text/javascript"></script>
+      <script src="${vendorBuild}" type="text/javascript"></script>
     </body>
   </html>
   `);
@@ -117,7 +114,7 @@ const renderApp = async (req, res) => {
     </Provider>,
   );
 
-  res.send(setResponse(html, preloadedState));
+  res.send(setResponse(html, preloadedState, req.hashManifest));
 };
 app.post('/auth/sign-in', async (req, res, next) => {
   const { email, password } = req.body;

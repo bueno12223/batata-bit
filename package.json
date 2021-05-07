@@ -4,7 +4,7 @@
   "description": " batata-bit cripto",
   "main": "src/server/index",
   "scripts": {
-    "start": "demon src/server/index",
+    "start": "node src/server/index",
     "build": "webpack-cli --config webpack.config.js",
     "dev": "nodemon src/server/index"
   },
@@ -17,15 +17,24 @@
   "bugs": {
     "url": "https://github.com/bueno12223/bueno12223/issues"
   },
+  "engines": {
+    "node": "12.16.x"
+  },
   "homepage": "https://github.com/bueno12223/bueno12223#readme",
   "dependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.13.13",
     "@babel/register": "^7.13.14",
+    "@babel/runtime": "^7.13.10",
     "@hapi/boom": "^9.1.2",
+    "babel-loader": "^8.2.2",
     "asset-require-hook": "^1.2.0",
     "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.6.0",
     "chalk": "^4.1.0",
     "cookie-parser": "^1.4.5",
     "crypto": "^1.0.1",
@@ -38,15 +47,12 @@
     "eslint-plugin-react": "^7.23.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "helmet": "^4.4.1",
     "ignore-styles": "^5.0.1",
     "md5": "^2.3.0",
     "mongoose": "^5.12.3",
     "passport": "^0.4.1",
-    "passport-http": "^0.3.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
     "react-redux": "^7.2.3",
@@ -59,13 +65,7 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.14",
-    "@babel/plugin-proposal-class-properties": "^7.13.0",
-    "@babel/plugin-transform-runtime": "^7.13.15",
-    "@babel/preset-env": "^7.13.12",
-    "@babel/preset-react": "^7.13.13",
-    "@babel/runtime": "^7.13.10",
-    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "*",
     "compression-webpack-plugin": "^7.1.2",
     "file-loader": "5.1.0",
     "mini-css-extract-plugin": "^1.4.0",
