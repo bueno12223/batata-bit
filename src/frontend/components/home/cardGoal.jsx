@@ -5,10 +5,12 @@ import PropTypes from 'prop-types';
 import { displayModal } from '../../actions';
 import GoalItem from './goalItem';
 import PlusIcon from '../../images/icons/plus';
+import SetColorHook from '../../hooks/setColorHook';
 import './styles/cardGoal.css';
 
 const cardGoal = (props) => {
   const { displayModal, goals } = props;
+
   return (
     <>
       <div className='card_RightGoalTitle'>
@@ -25,8 +27,8 @@ const cardGoal = (props) => {
           </div>
 
         )}
-        {goals.map((e) => (
-          <GoalItem key={e._id} {...e} />
+        {goals.map((e, idx) => (
+          <GoalItem key={e._id} color={SetColorHook(idx)} {...e} />
         ))}
       </div>
 
