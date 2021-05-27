@@ -26,7 +26,7 @@ function plansLanding() {
               <p className='plan-card-saving'>*Recibes 1 mes gratis de prueba*</p>
               <Link to='/sing-up'>
                 <button type='button' id='but1' className='plan-card-CTA '>
-                  Escoge este
+                  Registrate
                   <span />
                 </button>
               </Link>
@@ -45,7 +45,7 @@ function plansLanding() {
               <p className='plan-card-saving'>*Ahorras 129$ comprando el plan mensual*</p>
               <Link to='/sing-up'>
                 <button type='button' id='but2' className='plan-card-CTA plan-card-blue'>
-                  Escoge este
+                  Registrate
                   <span />
                 </button>
               </Link>
@@ -65,7 +65,7 @@ function plansLanding() {
               <p className='plan-card-saving'>*Un solo pago y tendras acceso de por vida*</p>
               <Link to='/sing-up'>
                 <button type='button' id='but3' className='plan-card-CTA'>
-                  Escoge este
+                  Registrate
                   <span />
                 </button>
               </Link>

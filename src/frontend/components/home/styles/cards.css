@@ -17,7 +17,7 @@
 }
 .cards_RigthContainer{
     width: 100%;
-    height: auto;
+    height: fit-content;
     display: grid;
     gap: 7px;
     grid-template-rows: 190px 1fr 1fr;
@@ -123,7 +123,8 @@
         margin-right: 10px;
     }
     .cards_leftContainer{
-        height: 90vh;
+        height: fit-content;
+        min-height: 100%;
         margin-right: 0px;
     }
     .card_LeftOverview{
@@ -131,6 +132,7 @@
     }
     .card_LeftHistory{
         height: 50%;
+        min-height: 339px;
     }
 }
 @media(min-width: 1000px){

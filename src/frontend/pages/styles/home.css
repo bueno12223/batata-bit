@@ -5,7 +5,8 @@
     display: flex;
     border: 21px solid var(--just-white);
     height: 100%;
-    
+    max-width: 1244px;
+    margin: 20px auto;
 }
 .rigthSection{
     display: flex;
