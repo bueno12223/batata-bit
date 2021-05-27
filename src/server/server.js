@@ -11,9 +11,14 @@ import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
 import axios from 'axios';
 import cookieParser from 'cookie-parser';
+// routes
+import serverRoutes from '../frontend/routers/serverRoutes';
+import userRoutes from './routes/user';
+import goalsRoutes from './routes/goals';
+import transacctionsRoutes from './routes/transacctions';
+// inital state
 import initialState from '../frontend/initalState';
 import reducer from '../frontend/reducers/index';
-import serverRoutes from '../frontend/routers/serverRoutes';
 import getManifest from './getManifest';
 
 dotenv.config();
@@ -116,83 +121,11 @@ const renderApp = async (req, res) => {
 
   res.send(setResponse(html, preloadedState, req.hashManifest));
 };
-app.post('/auth/sign-in', async (req, res, next) => {
-  const { email, password } = req.body;
-  try {
-    const user = await axios({
-      url: `${process.env.API_URL}/user/log-in`,
-      data: { 'email': email },
-      method: 'POST',
-      withCredentials: true,
-      auth: {
-        username: email,
-        password,
-      },
-    });
-    res.status(201).header(user.headers).json({ 'user': user.data.user });
-  } catch (error) {
-    next(error);
-    console.log(error);
-  }
-});
+// routes
+userRoutes(app);
+goalsRoutes(app);
+transacctionsRoutes(app);
 
-app.post('/auth/sign-up', async (req, res, next) => {
-  const { email, userId, fullName, password } = req.body;
-  try {
-    await axios({
-      url: `${process.env.API_URL}/user/sing-up`,
-      method: 'post',
-      data: {
-        'email': email,
-        'userId': userId,
-        'fullName': fullName,
-        'password': password,
-      },
-    });
-    res.status(201).json({
-      name: req.body.name,
-      email: req.body.email,
-      id: req.body.id,
-    });
-  } catch (error) {
-    next(error);
-    console.log(error);
-  }
-});
-
-app.put('/auth/config-user', async (req, res, next) => {
-  const { userId, fullName, email, password, id } = req.body;
-  const cookieValues = Object.values(req.cookies);
-  try {
-    const response = await axios({
-      url: `${process.env.API_URL}/user/${id}`,
-      data: { 'userId': userId, 'fullName': fullName, 'email': email, 'password': password },
-      method: 'PUT',
-      headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
-      withCredentials: true,
-    });
-    res.status(response.status).json({ 'body': response.body });
-  } catch (e) {
-    console.log(e);
-  }
-});
-app.put('/goal', async (req, res, next) => {
-  const { end, title, icon, goal, id } = req.body;
-  const cookieValues = Object.values(req.cookies);
-  try {
-    console.log({ end, title, icon, goal, id });
-    const results = await axios({
-      url: `${process.env.API_URL}/goal/${id}`,
-      data: { 'end': end, 'title': title, 'icon': icon, 'goal': parseFloat(goal) },
-      method: 'PUT',
-      headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
-      withCredentials: true,
-    });
-    res.status(201).json({ 'data': results.body });
-  } catch (e) {
-    console.log(e);
-  }
-});
 app.get('*', renderApp);
 
 app.listen(PORT, (err) => {

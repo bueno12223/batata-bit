@@ -8,7 +8,7 @@ const CardGoal = ({ ammount, end, title, icon, color }) => {
         $
         {ammount}
       </h2>
-      <p className='goal_date'>{end}</p>
+      <p className='goal_date'>{new Date(end).toLocaleDateString('en-US')}</p>
       <i aria-hidden className={`fas fa-${icon} goal_icon`} style={{ color: `rgb(${color})` }} />
       <h2 className='goal_title'>{title}</h2>
     </article>

@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles/header.css';
 import { connect } from 'react-redux';
-import Gravatar from '../general/gravatar';
+import UserI from '../../images/icons/user';
 
 const Header = (props) => {
-  const { userAcconut: { userId, email } } = props;
+  const { userAcconut: { userId } } = props;
   return (
     <div className='header'>
       <div className='header_text'>
@@ -17,7 +17,7 @@ const Header = (props) => {
         </button>
         <i aria-hidden className='fas fa-inbox header_userIcon' />
         <i aria-hidden className='fas fa-bell header_userIcon' />
-        <Gravatar className='header_userAvatar' email={email} />
+        <UserI className='header_userAvatar' />
         <div className='header:userData'>
           <div className='header_Text'>
             <p className='header_TextName'><b>{userId}</b></p>

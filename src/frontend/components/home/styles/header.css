@@ -25,9 +25,11 @@
     color: var(--home-blue);
 }
 .header_userAvatar{
-    width: 40px;
-    border-radius: 20px;
-    margin: 0 10px;
+    width: 36px;
+    height: 37px;
+    background-color: #FFC145;
+    border-radius: 60px;
+    margin: 5px;
     
 }
 .header_TextOptions{
