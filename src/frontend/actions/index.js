@@ -54,6 +54,15 @@ export const configUser = (payload, redirectUrl) => async (dispatch) => {
 
   }
 };
+// new deposit
+export const Newdeposit = (payload) => async () => {
+  try {
+    await axios.put('/transacctions/deposit', payload);
+  } catch (e) {
+    console.log(e);
+
+  }
+};
 // save goal
 export const saveGoal = (payload, redirectUrl) => async (dispatch) => {
   try {
