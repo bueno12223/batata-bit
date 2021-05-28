@@ -17,6 +17,7 @@ const Navbar = (props) => {
       <div className='logo'>
         <img src={Batata} alt='' />
         <h3 className='logo_text'>BatataBit</h3>
+        <i aria-hidden className='fas fa-chevron-circle-left menu_button_icon' onClick={() => props.handleActivate()} style={{ fontSize: '2.3em', marginLeft: 5 }} />
       </div>
       <div className='navrbar_menuSideBar'>
         <ul>

@@ -25,6 +25,10 @@ function logIn(props) {
     event.preventDefault();
     loginUser(form, '/home');
   };
+  const handleDemo = (event) => {
+    event.preventDefault();
+    loginUser({ email: 'b@gmail.com', password: '1' }, '/home');
+  };
   return (
     <section className='login-container'>
       <article className='border_logIn'>
@@ -38,9 +42,10 @@ function logIn(props) {
         </div>
         <h2>Iniciar sesión</h2>
         <form className='login_label' onSubmit={handleSubmit}>
-          <input className='login_labelForm' placeholder='correo' onChange={updateInput} type='email' name='email' required />
-          <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type='password' name='password' required />
-          <input className='login_labelSubmit' type='submit' value='Ingresar' required />
+          <input className='login_labelForm' placeholder='correo' onChange={updateInput} type='text' name='email' />
+          <input className='login_labelForm' placeholder='contraseña' onChange={updateInput} type='password' name='password' />
+          <input className='login_labelSubmit' type='submit' value='Ingresar' />
+          <button className='login_labelSubmit' type='submit' onClick={handleDemo}>Demo</button>
           <Link to='/' className='login_labelRemember '>¿Olvidaste la contraseña?</Link>
           <Link to='/sing-up' className='login_labelRemember '>Registrate aquí</Link>
           <Link to='/' className='login_labelRemember '>Regresar</Link>

@@ -29,6 +29,10 @@
     color: var(--just-white);
     cursor: pointer;
 }
+.userModal-danger {
+    background-color: #d15842;
+    border: #d15842;
+}
 .userModal-close{
     text-align: end;
 }

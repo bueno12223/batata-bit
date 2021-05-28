@@ -29,7 +29,7 @@ const CardVisa = (props) => {
         </div>
         <div className=''>
           <h3 className='overview_balanceIncomer'>
-            {visa.incomer || '0.00'}
+            {money.incomer || '0.00'}
             $
           </h3>
           <p className='overview_balancedescrip'>Ingresos</p>
@@ -37,7 +37,7 @@ const CardVisa = (props) => {
         <div className=''>
           <h4 className='overview_balanceSpend'>
             -
-            {visa.spend || '0.00'}
+            {money.spend || '0.00'}
             $
           </h4>
           <p className='overview_balancedescrip'>Gastos</p>

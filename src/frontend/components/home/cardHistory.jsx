@@ -23,11 +23,12 @@ const CardHistory = (props) => {
         </thead>
         {transacctions.map((e) => (
           <tbody key={e.id} className='histoty_tableValueContainer'>
-            <td className='histoty_tableValue first'>
-              {e.to}
+            <td className='histoty_tableValue first'>you</td>
+            <td className='histoty_tableValue out'>{new Date(e.date).toLocaleDateString('en-US')}</td>
+            <td className='histoty_tableValue'>{e.transacction_type}</td>
+            <td className='histoty_tableValue'>
+              <i aria-hidden className={`fas fa-${e.icon}`} style={{ color: '#4fb04b' }} />
             </td>
-            <td className='histoty_tableValue out'>{e.date}</td>
-            <td className='histoty_tableValue'>{e.type}</td>
             <td className='histoty_tableValue last'>{e.ammount}</td>
           </tbody>
         ))}

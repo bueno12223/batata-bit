@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { configUser } from '../../../actions';
 import MainModal from './MainModal';
 import './styles/userConfigModal.css';
@@ -52,9 +51,5 @@ const mapStateToProps = (state) => {
 };
 const mapDispachToProps = {
   configUser,
-};
-// eslint-disable-next-line react/no-typos
-userConfigModal.PropTypes = {
-  configUser: PropTypes.func,
 };
 export default connect(mapStateToProps, mapDispachToProps)(userConfigModal);

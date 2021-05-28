@@ -1,18 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { displayModal } from '../../actions';
 import GoalItem from './goalItem';
 import PlusIcon from '../../images/icons/plus';
 import SetColorHook from '../../hooks/setColorHook';
+import ModifyGoal from './modals/modifyGoalModal';
 import './styles/cardGoal.css';
 
 const cardGoal = (props) => {
+  const [selectGoal, setSelected] = useState({ ammount: null, end: null, title: null, icon: null, color: null });
   const { displayModal, goals } = props;
-
   return (
     <>
+      <ModifyGoal selectGoal={selectGoal} />
       <div className='card_RightGoalTitle'>
         <p>Metas</p>
         <button type='button' onClick={() => displayModal('goals')}>
@@ -28,7 +30,7 @@ const cardGoal = (props) => {
 
         )}
         {goals.map((e, idx) => (
-          <GoalItem key={e._id} color={SetColorHook(idx)} {...e} />
+          <GoalItem key={e._id} color={SetColorHook(idx)} {...e} onClick={setSelected} />
         ))}
       </div>
 
