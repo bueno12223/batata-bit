@@ -18,6 +18,25 @@ const goalsRoutes = (app) => {
       console.log(e);
     }
   });
+
+  // delete goal
+  app.put('/goal/break', async (req, res, next) => {
+    const { id, userId } = req.body;
+    const cookieValues = Object.values(req.cookies);
+    try {
+      const results = await axios({
+        url: `${process.env.API_URL}/goal/break`,
+        data: { 'id': id, 'userId': userId },
+        method: 'PUT',
+        headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
+        withCredentials: true,
+      });
+      res.status(201).json({ 'data': results.body });
+    } catch (e) {
+      console.log(e);
+    }
+  });
+
   // deposit goal
   app.put('/goal/deposit', async (req, res, next) => {
     const { ammount, since, title, icon } = req.body;

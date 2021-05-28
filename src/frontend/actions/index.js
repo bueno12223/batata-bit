@@ -88,4 +88,16 @@ export const DepositGoal = (payload, redirectUrl) => async (dispatch) => {
 
   }
 };
+// delete goal
+export const DeleteGoal = (payload, redirectUrl) => async () => {
+  try {
+    const data = await axios.put('/goal/break', payload);
+    if (data.status === 201) {
+      window.location.href = redirectUrl;
+    }
+  } catch (e) {
+    console.log(e);
+
+  }
+};
 
