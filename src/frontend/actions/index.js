@@ -100,4 +100,15 @@ export const DeleteGoal = (payload, redirectUrl) => async () => {
 
   }
 };
+// transaccions
+export const newTransacction = (payload, redirectUrl) => async () => {
+  try {
+    const data = await axios.put('/transacctions', payload);
+    if (data.status === 201) {
+      window.location.href = redirectUrl;
+    }
+  } catch (e) {
+    console.log(e);
 
+  }
+};

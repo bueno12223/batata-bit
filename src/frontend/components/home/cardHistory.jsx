@@ -27,7 +27,7 @@ const CardHistory = (props) => {
             <td className='histoty_tableValue out'>{new Date(e.date).toLocaleDateString('en-US')}</td>
             <td className='histoty_tableValue'>{e.transacction_type}</td>
             <td className='histoty_tableValue'>
-              <i aria-hidden className={`fas fa-${e.icon}`} style={{ color: '#4fb04b' }} />
+              <i aria-hidden className={`fas fa-${e.icon}`} style={{ color: 'rgb(186 186 186)' }} />
             </td>
             <td className='histoty_tableValue last'>{e.ammount}</td>
           </tbody>

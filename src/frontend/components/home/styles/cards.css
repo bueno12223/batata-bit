@@ -133,6 +133,7 @@
     .card_LeftHistory{
         height: 50%;
         min-height: 339px;
+        max-height: 347px;
     }
 }
 @media(min-width: 1000px){
