@@ -75,4 +75,17 @@ export const saveGoal = (payload, redirectUrl) => async (dispatch) => {
 
   }
 };
+// deposit goal
+export const DepositGoal = (payload, redirectUrl) => async (dispatch) => {
+  try {
+    console.log(payload);
+    const data = await axios.put('/goal/deposit', payload);
+    if (data.status === 201) {
+      window.location.href = redirectUrl;
+    }
+  } catch (e) {
+    console.log(e);
+
+  }
+};
 

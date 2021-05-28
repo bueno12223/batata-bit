@@ -51,7 +51,6 @@ const setResponse = (html, preloadedState, manifest) => {
   const mainStyles = manifest ? manifest['vendors.css'] : 'assets/app.css';
   const mainBuild = manifest ? manifest['main.js'] : 'assets/app.js';
   const vendorBuild = manifest ? manifest['vendors.js'] : 'assets/vendor.js';
-  // const batata = manifest ? manifest['assets/batata.svg'] : 'assets/vendor.js';
   return (`
   <!DOCTYPE html>
   <html>
@@ -59,6 +58,7 @@ const setResponse = (html, preloadedState, manifest) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>batataBit</title>
+      <link rel="icon" href="assets/batata.svg">
       <script src="https://kit.fontawesome.com/4aeb7d5cfb.js" crossorigin="anonymous"></script>    
       <link rel="stylesheet" href='${mainStyles}' type="text/css">
     </head>

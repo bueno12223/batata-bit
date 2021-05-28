@@ -48,11 +48,6 @@ function logIn(props) {
           <button className='login_labelSubmit' type='submit' onClick={handleDemo}>Demo</button>
           <Link to='/' className='login_labelRemember '>¿Olvidaste la contraseña?</Link>
           <Link to='/sing-up' className='login_labelRemember '>Registrate aquí</Link>
-          <Link to='/' className='login_labelRemember '>Regresar</Link>
-          <div className='login_labelRemember'>
-            <input type='checkbox' name='' />
-            <p>Recordar inicio de sesión</p>
-          </div>
         </form>
       </article>
 

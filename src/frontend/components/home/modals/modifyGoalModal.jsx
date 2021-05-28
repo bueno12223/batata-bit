@@ -1,25 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { DepositGoal } from '../../../actions';
 import MainModal from './MainModal';
 import './styles/userConfigModal.css';
+import './styles/goalsModal.css';
 
 function modifyGoalModal(props) {
-  const { display } = props;
-  const { ammount, end, title } = props.selectGoal;
+  const { display, DepositGoal } = props;
+  const { title, icon, id } = props.selectGoal;
+  const [ammount, setAmmunt] = useState(0);
+  const handleDepositGoal = () => DepositGoal({ ammount, since: id, title, icon }, '/home');
   return (
     <MainModal display={display}>
       <h3>Metas</h3>
-      <form>
-        <h4>{ammount}</h4>
+      <form className='userModal-conatiner' onSubmit={() => handleDepositGoal()}>
         <p>¿cuanto deseas guardar?</p>
-        <input type='number' name='ammount' className='userModal-input' />
-        <h4>{title}</h4>
-        <input type='text' name='title' className='userModal-input' />
-        <p>{new Date(end).toLocaleDateString('en-US')}</p>
-        <input type='date' name='date' className='userModal-input' />
+        <input type='number' name='ammount' className='userModal-input' onChange={(e) => setAmmunt(parseFloat(e.target.value))} />
         <input type='submit' className='userModal-input userModal-submit' />
         <p>Romper la meta</p>
-        <input type='submit' className='userModal-input userModal-submit userModal-danger' />
+        <button type='button' className='userModal-input userModal-submit userModal-danger'>Romper</button>
       </form>
     </MainModal>
   );
@@ -27,4 +26,7 @@ function modifyGoalModal(props) {
 const mapStateToProps = (state) => ({
   display: state.modals.modifyGoals,
 });
-export default connect(mapStateToProps, null)(modifyGoalModal);
+const mapDispachToProps = {
+  DepositGoal,
+};
+export default connect(mapStateToProps, mapDispachToProps)(modifyGoalModal);

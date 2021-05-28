@@ -2,9 +2,9 @@ import React from 'react';
 import './styles/goalItem.css';
 
 const CardGoal = (props) => {
-  const { ammount, end, title, icon, color } = props;
+  const { ammount, end, title, icon, color, id } = props;
   return (
-    <article type='button' className='goal_container card' onClick={() => props.onClick({ ammount, end, title, icon, color })}>
+    <article type='button' className='goal_container card' onClick={() => props.onClick({ icon, title, id })}>
       <h2 className='goal_ammount'>
         $
         {ammount}

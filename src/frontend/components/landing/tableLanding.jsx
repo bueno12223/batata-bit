@@ -21,21 +21,18 @@ function tableLanding() {
                   <td className='table-bitcoin'>Bitcoin</td>
                   <td className='table-right-top'>
                     $1.96
-                    <span className='down'>__</span>
                   </td>
                 </tr>
                 <tr>
                   <td>Etherium</td>
                   <td className='table-right'>
                     $0.07
-                    <span className='up'>__</span>
                   </td>
                 </tr>
                 <tr>
                   <td className='table-stelar'>Stellar</td>
                   <td className='table-right-bottom'>
                     $4.96
-                    <span className='down'>__</span>
                   </td>
                 </tr>
               </table>
