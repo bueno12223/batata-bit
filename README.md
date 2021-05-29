@@ -9,15 +9,15 @@ Our use the public version [here] (<https://batatabit-api.herokuapp.com>)
 
 ## frontend
 
-Has a landing page where you can log in o create your account, log in and sign up page, and the most important, the batata home, where you can save your money, do transactions o create goals.
+Has a landing page where you can log in o create your account, log in and sign up page, and the most important, the batata home, where you can save your money, do transactions or create goals.
 
 when you log in send the data to the backend and if there is any error it will show it, if not get a token that is saved in a cookie, all the request does it have to has the cookie, if not, you would be logged out.
 
 # designes
 
-[Landing page]()
-[log in]()
-[home]()
+[Landing page](https://www.figma.com/file/sMmlQaZldfDcLERYYWe6h4/Bata-Bit?node-id=81%3A132)
+[log in](https://www.figma.com/file/qy53cC5ajjWEFxMQu8dCuc/Login-Page-design-(Community))
+[home](https://www.figma.com/file/nwbnte688BtlnF8d7NWo5L/Financial-Dashboard-(Community)?node-id=1%3A8)
 
 ## Installation :wrench
 
