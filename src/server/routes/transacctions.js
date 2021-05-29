@@ -19,6 +19,7 @@ const transacctionsRoutes = (app) => {
         headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
         withCredentials: true,
       });
+      res.status(201);
     } catch (e) {
       next(e);
       console.log(e);
@@ -39,8 +40,7 @@ const transacctionsRoutes = (app) => {
         headers: { 'Cookie': `connect.sid=${cookieValues[1]}` },
         withCredentials: true,
       });
-      res.status(200);
-
+      res.status(201);
     } catch (e) {
       console.log(e);
       next(e);

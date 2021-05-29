@@ -54,17 +54,8 @@ export const configUser = (payload, redirectUrl) => async (dispatch) => {
 
   }
 };
-// new deposit
-export const Newdeposit = (payload) => async () => {
-  try {
-    await axios.put('/transacctions/deposit', payload);
-  } catch (e) {
-    console.log(e);
-
-  }
-};
 // save goal
-export const saveGoal = (payload, redirectUrl) => async (dispatch) => {
+export const saveGoal = (payload, redirectUrl = '/home') => async (dispatch) => {
   try {
     const data = await axios.put('/goal', payload);
     if (data.status === 201) {
@@ -76,9 +67,8 @@ export const saveGoal = (payload, redirectUrl) => async (dispatch) => {
   }
 };
 // deposit goal
-export const DepositGoal = (payload, redirectUrl) => async (dispatch) => {
+export const DepositGoal = (payload, redirectUrl = '/home') => async (dispatch) => {
   try {
-    console.log(payload);
     const data = await axios.put('/goal/deposit', payload);
     if (data.status === 201) {
       window.location.href = redirectUrl;
@@ -89,7 +79,7 @@ export const DepositGoal = (payload, redirectUrl) => async (dispatch) => {
   }
 };
 // delete goal
-export const DeleteGoal = (payload, redirectUrl) => async () => {
+export const DeleteGoal = (payload, redirectUrl = '/home') => async () => {
   try {
     const data = await axios.put('/goal/break', payload);
     if (data.status === 201) {
@@ -101,12 +91,23 @@ export const DeleteGoal = (payload, redirectUrl) => async () => {
   }
 };
 // transaccions
-export const newTransacction = (payload, redirectUrl) => async () => {
+export const newTransacction = (payload, redirectUrl) => async (dispatch) => {
   try {
     const data = await axios.put('/transacctions', payload);
     if (data.status === 201) {
       window.location.href = redirectUrl;
     }
+  } catch (e) {
+    console.log(e);
+
+  }
+};
+export const Newdeposit = (payload, redirectUrl) => async (dispatch) => {
+  try {
+    await axios.put('/transacctions/deposit', payload);
+    console.log(redirectUrl);
+    window.location.href = redirectUrl;
+    console.log('yes');
   } catch (e) {
     console.log(e);
 

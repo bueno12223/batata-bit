@@ -8,8 +8,6 @@ function depositModal(props) {
   const [ammount, setAmmount] = useState(0);
   const { modals: { deposit } } = props;
   const handleDeposit = (e) => {
-    e.preventDefault();
-    // eslint-disable-next-line radix
     props.Newdeposit({ ammount, id: props.id }, '/home');
   };
   return (

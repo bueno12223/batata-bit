@@ -5,7 +5,6 @@ const goalsRoutes = (app) => {
     const { end, title, icon, goal, id } = req.body;
     const cookieValues = Object.values(req.cookies);
     try {
-      console.log({ end, title, icon, goal, id });
       const results = await axios({
         url: `${process.env.API_URL}/goal/${id}`,
         data: { 'end': end, 'title': title, 'icon': icon, 'goal': parseFloat(goal) },
