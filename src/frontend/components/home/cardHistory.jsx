@@ -22,7 +22,7 @@ const CardHistory = (props) => {
           <th className='history_tableHeadName last'>Cantidad</th>
         </thead>
         {transacctions.map((e) => (
-          <tbody key={e.id} className='histoty_tableValueContainer'>
+          <tbody key={e._id} className='histoty_tableValueContainer'>
             <td className='histoty_tableValue first'>you</td>
             <td className='histoty_tableValue out'>{new Date(e.date).toLocaleDateString('en-US')}</td>
             <td className='histoty_tableValue'>{e.transacction_type}</td>

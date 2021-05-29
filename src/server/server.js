@@ -98,6 +98,7 @@ const renderApp = async (req, res) => {
       withCredentials: true,
     });
     const userData = user.data.user;
+    console.log(userData.userPersonalData.goals);
     userData.error = false;
     userData.modals = modalConfig;
     InitalState = userData;
